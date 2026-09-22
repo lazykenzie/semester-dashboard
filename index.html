@@ -1,9 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Semester Self Learning Dashboard v7</title>
+<meta charset="utf-8"/>
+<title>Semester Self Learning Dashboard v8</title>
 <style>
 body{font-family:-apple-system,BlinkMacSystemFont,"Microsoft YaHei",sans-serif;background:#fbf6fc;margin:30px;color:#222}
 h1{text-align:center;color:#532087}
@@ -24,71 +24,34 @@ a{color:#9215c0}
 .phase{display:none}
 input{transform:scale(1.15)}
 
-/* iOS mobile optimization */
-@media screen and (max-width: 768px){
+.table-scroll{
+    overflow-x:auto;
+    margin-top:20px;
+}
 
-    body{
-        margin:12px;
-        font-size:14px;
-    }
+.resource-table{
+    table-layout:auto;
+    min-width:1050px;
+}
 
-    h1{
-        font-size:26px;
-        line-height:1.3;
-    }
+.resource-table th:nth-child(1){
+    width:90px;
+}
 
-    h2{
-        font-size:20px;
-        margin-top:20px;
-    }
+.resource-table th:nth-child(2){
+    width:220px;
+}
 
-    .notice{
-        padding:12px;
-        font-size:14px;
-        line-height:1.5;
-    }
+.resource-table th:nth-child(3){
+    width:330px;
+}
 
-    button{
-        width:100%;
-        margin:5px 0;
-        padding:12px;
-        font-size:15px;
-    }
+.resource-table td{
+    line-height:1.6;
+}
 
-    table{
-        table-layout:auto;
-        width:100%;
-        overflow-x:auto;
-        display:block;
-        -webkit-overflow-scrolling:touch;
-    }
-
-    th,td{
-        min-width:120px;
-        padding:8px;
-        font-size:13px;
-    }
-
-    .time{
-        min-width:85px;
-        position:sticky;
-        left:0;
-        z-index:2;
-    }
-
-    .card,.fixed{
-        padding:7px;
-        line-height:1.45;
-    }
-
-    input{
-        transform:scale(1.3);
-        margin-right:4px;
-    }
-
-    a{
-        word-break:break-word;
-    }
+.resource-table a{
+    font-weight:bold;
 }
 
 </style>
@@ -118,148 +81,643 @@ window.onload=function(){
 </script>
 </head>
 <body>
-
 <h1>Semester Self-Learning Dashboard</h1>
 <div class="notice">
 🚀 This semester's mission: survive the difficult courses, keep Text-2-Datalog moving, and slowly build the skills needed for a Data/AI internship. Progress beats perfection.
 </div>
-
 <div style="text-align:center">
 <button class="phase-btn" onclick="showPhase('phase1')">Phase 1: SQL Foundation</button>
 <button class="phase-btn" onclick="showPhase('phase2')">Phase 2: Data Skill Building</button>
 <button class="phase-btn" onclick="showPhase('phase3')">Phase 3: Basic ML Review</button>
+<button class="phase-btn" onclick="showPhase('randomProcess')">Random Process Guide</button>
+<button class="phase-btn" onclick="showPhase('bayesianStats')">Bayesian Statistics Guide</button>
 <button onclick="resetChecks()">Weekly Reset</button>
 </div>
-
-<div id="phase1" class="phase">
+<div class="phase" id="phase1">
 <h2>Phase 1</h2>
 <table>
 <tr><th class="time header">Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
 <tr><td class="time">08:15-09:45</td>
-<td class="card"><input type="checkbox"> Econometrics self-learning<br>Ben Lambert Econometrics<br>Focus: OLS intuition, assumptions, hypothesis testing<br><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
-<td class="card"><input type="checkbox"> Text-2-Datalog research block</td>
-<td class="fixed"><input type="checkbox"> Random Process fixed class<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a><br>If self-study: only Random Process<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a></td>
-<td class="card"><input type="checkbox"> Research maintenance</td>
-<td class="card"><input type="checkbox"> Text-2-Datalog research block</td>
+<td class="card"><input type="checkbox"/> Econometrics self-learning<br/>Ben Lambert Econometrics<br/>Focus: OLS intuition, assumptions, hypothesis testing<br/><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
+<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
+<td class="card"><input type="checkbox"/> Research maintenance</td>
+<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
 </tr>
 <tr><td class="time">10:05-11:35</td>
-<td class="card"><input type="checkbox"> Econometrics exercises<br>Wooldridge problems + notes</td>
-<td class="card"><input type="checkbox"> Research deep work</td>
-<td class="fixed"><input type="checkbox"> Random Process fixed class<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a> continuation<br>Same-topic review only</td>
-<td class="card"><input type="checkbox"> Internship practice<br>LeetCode SQL 50: <a href="https://leetcode.com/studyplan/top-sql-50/">Open</a></td>
-<td class="card"><input type="checkbox"> Research deep work</td>
+<td class="card"><input type="checkbox"/> Econometrics exercises<br/>Wooldridge problems + notes</td>
+<td class="card"><input type="checkbox"/> Research deep work</td>
+<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
+<td class="card"><input type="checkbox"/> Internship practice<br/>LeetCode SQL 50: <a href="https://leetcode.com/studyplan/top-sql-50/">Open</a></td>
+<td class="card"><input type="checkbox"/> Research deep work</td>
 </tr>
 <tr><td class="time">13:00-14:30</td>
 <td>Free / lunch</td>
-<td class="card"><input type="checkbox"> Random Process self-learning<br>UIUC ECE534 lecture + Hajek notes<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Video</a><br><a href="https://hajek.ece.illinois.edu/ECE534Notes.html">Notes</a></td>
-<td class="fixed"><input type="checkbox"> Bayesian Statistics fixed class<br><a href="https://www.youtube.com/@RichardMcElreath">Course Video</a></td>
-<td class="fixed"><input type="checkbox"> Bayesian Statistics fixed class<br><a href="https://www.youtube.com/@RichardMcElreath">Course Video</a></td>
-<td class="card"><input type="checkbox"> Bayesian consolidation<br>Statistical Rethinking<br><a href="https://www.youtube.com/@RichardMcElreath">Video</a></td>
+<td class="card"><input type="checkbox"/> Random Process <self-learning></self-learning></td>
+<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
+<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
+<td class="card"><input type="checkbox"/> Bayesian consolidation<br/>Use Bayesian Statistics Guide</td>
 </tr>
 <tr><td class="time">14:50-16:20</td>
-<td class="fixed"><input type="checkbox"> Advanced English fixed class<br><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
-<td class="card"><input type="checkbox"> Random Process exercises<br><a href="https://hajek.ece.illinois.edu/ECE534Notes.html">Notes</a></td>
-<td class="fixed"><input type="checkbox"> Advanced English fixed class<br><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br>If self-study: English only</td>
-<td class="fixed"><input type="checkbox"> Operations Research fixed class<br><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
-<td class="card"><input type="checkbox"> Bayesian exercises<br><a href="https://avehtari.github.io/BDA_course_Aalto/">Aalto BDA</a></td>
+<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Random Process exercises</td>
+<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br/>If self-study: English only</td>
+<td class="fixed"><input type="checkbox"/> Operations Research fixed class<br/><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Bayesian exercises<br/>Use textbook + Bayesian Statistics Guide</td>
 </tr>
 <tr><td class="time">16:30-18:00</td>
-<td class="fixed"><input type="checkbox"> NLP fixed class</td>
+<td class="fixed"><input type="checkbox"/> NLP fixed class</td>
 <td>Rest / exercise</td>
-<td class="fixed"><input type="checkbox"> Multivariate Statistical Analysis</td>
-<td class="fixed"><input type="checkbox"> Database Principles and Practice<br><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br>15:50-17:00</td>
-<td class="card"><input type="checkbox"> Internship practice<br>LeetCode SQL 50: <a href="https://leetcode.com/studyplan/top-sql-50/">Open</a></td>
+<td class="fixed"><input type="checkbox"/> Multivariate Statistical Analysis</td>
+<td class="fixed"><input type="checkbox"/> Database Principles and Practice<br/><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br/>15:50-17:00</td>
+<td class="card"><input type="checkbox"/> Internship practice<br/>LeetCode SQL 50: <a href="https://leetcode.com/studyplan/top-sql-50/">Open</a></td>
 </tr>
 <tr><td class="time">18:20-20:35</td>
 <td>Rest</td><td>Rest</td><td>Review</td><td>Rest</td><td>Free time</td></tr>
 </table>
 </div>
-
-<div id="phase2" class="phase">
+<div class="phase" id="phase2">
 <h2>Phase 2</h2>
 <table>
 <tr><th class="time header">Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
 <tr><td class="time">08:15-09:45</td>
-<td class="card"><input type="checkbox"> Econometrics self-learning<br>Ben Lambert Econometrics<br>Focus: OLS intuition, assumptions, hypothesis testing<br><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
-<td class="card"><input type="checkbox"> Text-2-Datalog research block</td>
-<td class="fixed"><input type="checkbox"> Random Process fixed class<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a><br>If self-study: only Random Process<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a></td>
-<td class="card"><input type="checkbox"> Research maintenance</td>
-<td class="card"><input type="checkbox"> Text-2-Datalog research block</td>
+<td class="card"><input type="checkbox"/> Econometrics self-learning<br/>Ben Lambert Econometrics<br/>Focus: OLS intuition, assumptions, hypothesis testing<br/><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
+<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
+<td class="card"><input type="checkbox"/> Research maintenance</td>
+<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
 </tr>
 <tr><td class="time">10:05-11:35</td>
-<td class="card"><input type="checkbox"> Econometrics exercises<br>Wooldridge problems + notes</td>
-<td class="card"><input type="checkbox"> Research deep work</td>
-<td class="fixed"><input type="checkbox"> Random Process fixed class<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a> continuation<br>Same-topic review only</td>
-<td class="card"><input type="checkbox"> Internship practice<br>Kaggle Python: <a href="https://www.kaggle.com/learn/python">Open</a><br>Kaggle Pandas: <a href="https://www.kaggle.com/learn/pandas">Open</a></td>
-<td class="card"><input type="checkbox"> Research deep work</td>
+<td class="card"><input type="checkbox"/> Econometrics exercises<br/>Wooldridge problems + notes</td>
+<td class="card"><input type="checkbox"/> Research deep work</td>
+<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
+<td class="card"><input type="checkbox"/> Internship practice<br/>Kaggle Python: <a href="https://www.kaggle.com/learn/python">Open</a><br/>Kaggle Pandas: <a href="https://www.kaggle.com/learn/pandas">Open</a></td>
+<td class="card"><input type="checkbox"/> Research deep work</td>
 </tr>
 <tr><td class="time">13:00-14:30</td>
 <td>Free / lunch</td>
-<td class="card"><input type="checkbox"> Random Process self-learning<br>UIUC ECE534 lecture + Hajek notes<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Video</a><br><a href="https://hajek.ece.illinois.edu/ECE534Notes.html">Notes</a></td>
-<td class="fixed"><input type="checkbox"> Bayesian Statistics fixed class<br><a href="https://www.youtube.com/@RichardMcElreath">Course Video</a></td>
-<td class="fixed"><input type="checkbox"> Bayesian Statistics fixed class<br><a href="https://www.youtube.com/@RichardMcElreath">Course Video</a></td>
-<td class="card"><input type="checkbox"> Bayesian consolidation<br>Statistical Rethinking<br><a href="https://www.youtube.com/@RichardMcElreath">Video</a></td>
+<td class="card"><input type="checkbox"/> Random Process <self-learning></self-learning></td>
+<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
+<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
+<td class="card"><input type="checkbox"/> Bayesian consolidation<br/>Use Bayesian Statistics Guide</td>
 </tr>
 <tr><td class="time">14:50-16:20</td>
-<td class="fixed"><input type="checkbox"> Advanced English fixed class<br><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
-<td class="card"><input type="checkbox"> Random Process exercises<br><a href="https://hajek.ece.illinois.edu/ECE534Notes.html">Notes</a></td>
-<td class="fixed"><input type="checkbox"> Advanced English fixed class<br><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br>If self-study: English only</td>
-<td class="fixed"><input type="checkbox"> Operations Research fixed class<br><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
-<td class="card"><input type="checkbox"> Bayesian exercises<br><a href="https://avehtari.github.io/BDA_course_Aalto/">Aalto BDA</a></td>
+<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Random Process exercises</td>
+<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br/>If self-study: English only</td>
+<td class="fixed"><input type="checkbox"/> Operations Research fixed class<br/><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Bayesian exercises<br/>Use textbook + Bayesian Statistics Guide</td>
 </tr>
 <tr><td class="time">16:30-18:00</td>
-<td class="fixed"><input type="checkbox"> NLP fixed class</td>
+<td class="fixed"><input type="checkbox"/> NLP fixed class</td>
 <td>Rest / exercise</td>
-<td class="fixed"><input type="checkbox"> Multivariate Statistical Analysis</td>
-<td class="fixed"><input type="checkbox"> Database Principles and Practice<br><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br>15:50-17:00</td>
-<td class="card"><input type="checkbox"> Internship practice<br>Kaggle Python: <a href="https://www.kaggle.com/learn/python">Open</a><br>Kaggle Pandas: <a href="https://www.kaggle.com/learn/pandas">Open</a></td>
+<td class="fixed"><input type="checkbox"/> Multivariate Statistical Analysis</td>
+<td class="fixed"><input type="checkbox"/> Database Principles and Practice<br/><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br/>15:50-17:00</td>
+<td class="card"><input type="checkbox"/> Internship practice<br/>Kaggle Python: <a href="https://www.kaggle.com/learn/python">Open</a><br/>Kaggle Pandas: <a href="https://www.kaggle.com/learn/pandas">Open</a></td>
 </tr>
 <tr><td class="time">18:20-20:35</td>
 <td>Rest</td><td>Rest</td><td>Review</td><td>Rest</td><td>Free time</td></tr>
 </table>
 </div>
-
-<div id="phase3" class="phase">
+<div class="phase" id="phase3">
 <h2>Phase 3</h2>
 <table>
 <tr><th class="time header">Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
 <tr><td class="time">08:15-09:45</td>
-<td class="card"><input type="checkbox"> Econometrics self-learning<br>Ben Lambert Econometrics<br>Focus: OLS intuition, assumptions, hypothesis testing<br><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
-<td class="card"><input type="checkbox"> Text-2-Datalog research block</td>
-<td class="fixed"><input type="checkbox"> Random Process fixed class<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a><br>If self-study: only Random Process<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a></td>
-<td class="card"><input type="checkbox"> Research maintenance</td>
-<td class="card"><input type="checkbox"> Text-2-Datalog research block</td>
+<td class="card"><input type="checkbox"/> Econometrics self-learning<br/>Ben Lambert Econometrics<br/>Focus: OLS intuition, assumptions, hypothesis testing<br/><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
+<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
+<td class="card"><input type="checkbox"/> Research maintenance</td>
+<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
 </tr>
 <tr><td class="time">10:05-11:35</td>
-<td class="card"><input type="checkbox"> Econometrics exercises<br>Wooldridge problems + notes</td>
-<td class="card"><input type="checkbox"> Research deep work</td>
-<td class="fixed"><input type="checkbox"> Random Process fixed class<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Course Video</a> continuation<br>Same-topic review only</td>
-<td class="card"><input type="checkbox"> Internship practice<br>Kaggle Intro ML: <a href="https://www.kaggle.com/learn/intro-to-machine-learning">Open</a><br>Scikit-learn: <a href="https://scikit-learn.org/stable/user_guide.html">Open</a></td>
-<td class="card"><input type="checkbox"> Research deep work</td>
+<td class="card"><input type="checkbox"/> Econometrics exercises<br/>Wooldridge problems + notes</td>
+<td class="card"><input type="checkbox"/> Research deep work</td>
+<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
+<td class="card"><input type="checkbox"/> Internship practice<br/>Kaggle Intro ML: <a href="https://www.kaggle.com/learn/intro-to-machine-learning">Open</a><br/>Scikit-learn: <a href="https://scikit-learn.org/stable/user_guide.html">Open</a></td>
+<td class="card"><input type="checkbox"/> Research deep work</td>
 </tr>
 <tr><td class="time">13:00-14:30</td>
 <td>Free / lunch</td>
-<td class="card"><input type="checkbox"> Random Process self-learning<br>UIUC ECE534 lecture + Hajek notes<br><a href="https://courses.grainger.illinois.edu/ece534/sp2025/index.html">Video</a><br><a href="https://hajek.ece.illinois.edu/ECE534Notes.html">Notes</a></td>
-<td class="fixed"><input type="checkbox"> Bayesian Statistics fixed class<br><a href="https://www.youtube.com/@RichardMcElreath">Course Video</a></td>
-<td class="fixed"><input type="checkbox"> Bayesian Statistics fixed class<br><a href="https://www.youtube.com/@RichardMcElreath">Course Video</a></td>
-<td class="card"><input type="checkbox"> Bayesian consolidation<br>Statistical Rethinking<br><a href="https://www.youtube.com/@RichardMcElreath">Video</a></td>
+<td class="card"><input type="checkbox"/> Random Process self-learning</td>
+<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
+<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
+<td class="card"><input type="checkbox"/> Bayesian consolidation<br/>Use Bayesian Statistics Guide</td>
 </tr>
 <tr><td class="time">14:50-16:20</td>
-<td class="fixed"><input type="checkbox"> Advanced English fixed class<br><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
-<td class="card"><input type="checkbox"> Random Process exercises<br><a href="https://hajek.ece.illinois.edu/ECE534Notes.html">Notes</a></td>
-<td class="fixed"><input type="checkbox"> Advanced English fixed class<br><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br>If self-study: English only</td>
-<td class="fixed"><input type="checkbox"> Operations Research fixed class<br><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
-<td class="card"><input type="checkbox"> Bayesian exercises<br><a href="https://avehtari.github.io/BDA_course_Aalto/">Aalto BDA</a></td>
+<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Random Process exercises</td>
+<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br/>If self-study: English only</td>
+<td class="fixed"><input type="checkbox"/> Operations Research fixed class<br/><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
+<td class="card"><input type="checkbox"/> Bayesian exercises<br/>Use textbook + Bayesian Statistics Guide</td>
 </tr>
 <tr><td class="time">16:30-18:00</td>
-<td class="fixed"><input type="checkbox"> NLP fixed class</td>
+<td class="fixed"><input type="checkbox"/> NLP fixed class</td>
 <td>Rest / exercise</td>
-<td class="fixed"><input type="checkbox"> Multivariate Statistical Analysis</td>
-<td class="fixed"><input type="checkbox"> Database Principles and Practice<br><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br>15:50-17:00</td>
-<td class="card"><input type="checkbox"> Internship practice<br>Kaggle Intro ML: <a href="https://www.kaggle.com/learn/intro-to-machine-learning">Open</a><br>Scikit-learn: <a href="https://scikit-learn.org/stable/user_guide.html">Open</a></td>
+<td class="fixed"><input type="checkbox"/> Multivariate Statistical Analysis</td>
+<td class="fixed"><input type="checkbox"/> Database Principles and Practice<br/><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br/>15:50-17:00</td>
+<td class="card"><input type="checkbox"/> Internship practice<br/>Kaggle Intro ML: <a href="https://www.kaggle.com/learn/intro-to-machine-learning">Open</a><br/>Scikit-learn: <a href="https://scikit-learn.org/stable/user_guide.html">Open</a></td>
 </tr>
 <tr><td class="time">18:20-20:35</td>
 <td>Rest</td><td>Rest</td><td>Review</td><td>Rest</td><td>Free time</td></tr>
 </table>
 </div>
+<div class="phase" id="randomProcess">
+<h2>Random Process Learning Guide</h2>
+<div class="notice">
+Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used as supplementary lectures.
+</div>
+<div class="table-scroll">
+<table class="resource-table">
+<thead>
+<tr>
+<th>Section</th>
+<th>Textbook Topic</th>
+<th>Video</th>
+<th>How to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.1</td>
+<td>概率空间</td>
+<td><a href="https://stat110.hsites.harvard.edu/youtube" target="_blank">Harvard Stat 110 — Lectures 1–5</a></td>
+<td>Probability axioms and basic probability models. Quick review is enough if already familiar.</td>
+</tr>
+<tr>
+<td>1.2</td>
+<td>随机变量与分布函数</td>
+<td><a href="https://stat110.hsites.harvard.edu/youtube" target="_blank">Harvard Stat 110 — Lectures 7–8, 12–14</a></td>
+<td>Random variables, PMF, CDF, PDF and common continuous distributions.</td>
+</tr>
+<tr>
+<td>1.3</td>
+<td>数字特征、矩母函数与特征函数</td>
+<td><a href="https://stat110.hsites.harvard.edu/youtube" target="_blank">Harvard Stat 110 — Lectures 9, 17–18, 21</a></td>
+<td>Expectation, MGF, variance and covariance. Characteristic functions still need the textbook.</td>
+</tr>
+<tr>
+<td>1.4</td>
+<td>收敛性</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-3-law-of-large-numbers-convergence/" target="_blank">MIT 6.262 — Lecture 3</a></td>
+<td>Law of large numbers and convergence. Very useful for this section.</td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>独立性与条件期望</td>
+<td><a href="https://stat110.hsites.harvard.edu/youtube" target="_blank">Harvard Stat 110 — Lectures 25–27</a></td>
+<td>Focus especially on conditional expectation, which is needed again for martingales.</td>
+</tr>
+<tr>
+<td>2.1</td>
+<td>随机过程基本概念</td>
+<td><a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-13/" target="_blank">MIT 6.041 — Lecture 13</a></td>
+<td>Good first introduction to a stochastic process through the Bernoulli process.</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>有限维分布与 Kolmogorov 定理</td>
+<td><a href="https://mathweb.ucsd.edu/~tkemp/ProbabilityTube/" target="_blank">UCSD Math 280 — Kolmogorov Extension Theorem I–II</a></td>
+<td>More theoretical than the other videos. Use when studying the theorem itself.</td>
+</tr>
+<tr>
+<td>2.3</td>
+<td>随机过程的基本类型</td>
+<td><a href="https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-8-time-series-analysis-i/" target="_blank">MIT 18.S096 — Lecture 8</a></td>
+<td>Useful mainly for stationary processes.</td>
+</tr>
+<tr>
+<td>3.1</td>
+<td>Poisson 过程</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-14/" target="_blank">MIT 6.041 — Lecture 14: Poisson Process I</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-4-poisson-the-perfect-arrival-process/" target="_blank">MIT 6.262 — Lecture 4</a>
+</td>
+<td>Watch 6.041 first for intuition, then 6.262 if you need the deeper treatment.</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>与 Poisson 过程相关的若干分布</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-15/" target="_blank">MIT 6.041 — Lecture 15</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-5-poisson-combining-and-splitting/" target="_blank">MIT 6.262 — Lecture 5</a>
+</td>
+<td>Interarrival times, splitting, combining and conditioning.</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>Poisson 过程的推广</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-5-poisson-combining-and-splitting/" target="_blank">MIT 6.262 — Lecture 5</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-6-from-poisson-to-markov/" target="_blank">MIT 6.262 — Lecture 6</a>
+</td>
+<td>Partial match. Some textbook extensions still need to be read directly.</td>
+</tr>
+<tr>
+<td>4.1</td>
+<td>更新过程的定义及若干分布</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-10-renewals-and-the-strong-law-of-large-numbers/" target="_blank">MIT 6.262 — Lecture 10</a></td>
+<td>Very close to the textbook introduction to renewal processes.</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>更新方程及其应用</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-11-renewals-strong-law-and-rewards/" target="_blank">MIT 6.262 — Lecture 11</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-12-renewal-rewards-stopping-trials-and-walds-inequality/" target="_blank">MIT 6.262 — Lecture 12</a>
+</td>
+<td>Renewal rewards and related applications.</td>
+</tr>
+<tr>
+<td>4.3</td>
+<td>更新定理</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-15-the-last-renewal/" target="_blank">MIT 6.262 — Lecture 15</a></td>
+<td>Includes the elementary renewal theorem and Blackwell theorem.</td>
+</tr>
+<tr>
+<td>4.4</td>
+<td>更新过程的推广</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-16-renewals-and-countable-state-markov/" target="_blank">MIT 6.262 — Lecture 16</a></td>
+<td>Useful for extensions and the connection to Markov processes.</td>
+</tr>
+<tr>
+<td>5.1</td>
+<td>Markov 链基本概念</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-16/" target="_blank">MIT 6.041 — Lecture 16</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-7-finite-state-markov-chains-the-matrix-approach/" target="_blank">MIT 6.262 — Lecture 7</a>
+</td>
+<td>Start with 6.041. Use 6.262 for the matrix formulation.</td>
+</tr>
+<tr>
+<td>5.2</td>
+<td>状态的分类及性质</td>
+<td><a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-16/" target="_blank">MIT 6.041 — Lecture 16</a></td>
+<td>Recurrent, transient, periodic and ergodic states.</td>
+</tr>
+<tr>
+<td>5.3</td>
+<td>极限定理及平稳分布</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-17/" target="_blank">MIT 6.041 — Lecture 17</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-8-markov-eigenvalues-and-eigenvectors/" target="_blank">MIT 6.262 — Lecture 8</a>
+</td>
+<td>Steady-state probabilities and long-run behavior.</td>
+</tr>
+<tr>
+<td>5.4</td>
+<td>Markov 链的应用</td>
+<td><a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-18/" target="_blank">MIT 6.041 — Lecture 18</a></td>
+<td>Absorption probabilities, expected absorption time and first passage.</td>
+</tr>
+<tr>
+<td>5.5</td>
+<td>连续时间 Markov 链</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-18-countable-state-markov-chains-and-processes/" target="_blank">MIT 6.262 — Lecture 18</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-19-countable-state-markov-processes/" target="_blank">MIT 6.262 — Lecture 19</a>
+</td>
+<td>Main material for continuous-time Markov processes.</td>
+</tr>
+<tr>
+<td>6.1</td>
+<td>鞅基本概念</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-23-martingales-plain-sub-and-super/" target="_blank">MIT 6.262 — Lecture 23</a></td>
+<td>Martingales, submartingales and supermartingales.</td>
+</tr>
+<tr>
+<td>6.2</td>
+<td>鞅的停时定理及其应用</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank">MIT 6.262 — Lecture 24</a></td>
+<td>Core video for stopping times and optional stopping.</td>
+</tr>
+<tr>
+<td>6.3</td>
+<td>一致可积性</td>
+<td>No strong matching US undergraduate video</td>
+<td>Use the textbook and your lecture notes for this section.</td>
+</tr>
+<tr>
+<td>6.4</td>
+<td>鞅收敛定理</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank">MIT 6.262 — Lecture 24</a></td>
+<td>Includes martingale convergence.</td>
+</tr>
+<tr>
+<td>6.5</td>
+<td>连续鞅</td>
+<td>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a><br/>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
+</td>
+<td>Useful as a bridge into continuous-time stochastic calculus.</td>
+</tr>
+<tr>
+<td>7.1</td>
+<td>Brown 运动基本概念与性质</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td>Main Brownian motion lecture.</td>
+</tr>
+<tr>
+<td>7.2</td>
+<td>Gauss 过程</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td>Brownian motion as the central Gaussian-process example. General Gaussian processes still require the textbook.</td>
+</tr>
+<tr>
+<td>7.3</td>
+<td>Brown 运动的鞅性质</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-23-martingales-plain-sub-and-super/" target="_blank">MIT 6.262 — Lecture 23</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank">MIT 6.262 — Lecture 24</a><br/>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a>
+</td>
+<td>Combine the martingale lectures with the Brownian motion lecture.</td>
+</tr>
+<tr>
+<td>7.4</td>
+<td>Brown 运动的 Markov 性</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td>Includes the Markov property of Brownian motion.</td>
+</tr>
+<tr>
+<td>7.5</td>
+<td>最大值变量及反正弦律</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td>Reflection principle and Brownian maximum are covered. Arcsine law is less complete.</td>
+</tr>
+<tr>
+<td>7.6</td>
+<td>Brown 运动的几种变化</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td>Brownian motion with drift, Brownian bridge and related variants.</td>
+</tr>
+<tr>
+<td>7.7</td>
+<td>高维 Brown 运动</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td>Includes two-dimensional Brownian motion.</td>
+</tr>
+<tr>
+<td>8.1</td>
+<td>关于随机游动的积分</td>
+<td>Textbook first → <a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a></td>
+<td>The MIT lecture starts at stochastic calculus, so use the textbook for the discrete motivation.</td>
+</tr>
+<tr>
+<td>8.2</td>
+<td>关于 Brown 运动的积分</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24: Stochastic Calculus</a></td>
+<td>Directly relevant to the construction of the Itô integral.</td>
+</tr>
+<tr>
+<td>8.3</td>
+<td>Itô 积分过程</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a></td>
+<td>Itô integral and Itô isometry.</td>
+</tr>
+<tr>
+<td>8.4</td>
+<td>Itô 公式</td>
+<td>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a><br/>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
+</td>
+<td>Lecture 24 introduces Itô's formula and Lecture 25 develops the applications.</td>
+</tr>
+<tr>
+<td>9.1</td>
+<td>金融市场术语与基本假定</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/lecture-videos/" target="_blank">MIT 18.642 — Finance Lectures</a></td>
+<td>Use only the necessary financial background rather than watching the entire course.</td>
+</tr>
+<tr>
+<td>9.2</td>
+<td>Black–Scholes 模型</td>
+<td>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-21-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 21: Black–Scholes</a><br/>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
+</td>
+<td>Very close to the textbook Black–Scholes material.</td>
+</tr>
+<tr>
+<td>10.1</td>
+<td>保险精算基本概念</td>
+<td>No strong matching free US video course</td>
+<td>Use textbook and class lectures.</td>
+</tr>
+<tr>
+<td>10.2</td>
+<td>经典破产理论介绍</td>
+<td>No strong matching free US video course</td>
+<td>Use textbook and class lectures.</td>
+</tr>
+<tr>
+<td>11.1</td>
+<td>计算积分的 Monte Carlo 方法</td>
+<td><a href="https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/mit6_0002f16_lec6/" target="_blank">MIT 6.0002 — Lecture 6: Monte Carlo Simulation</a></td>
+<td>Good intuitive introduction before reading the textbook derivations.</td>
+</tr>
+<tr>
+<td>11.2</td>
+<td>Markov Chain Monte Carlo 方法简介</td>
+<td><a href="https://www.youtube.com/watch?v=j4nEAqUUnVw" target="_blank">MCMC Lecture — Metropolis-Hastings and Gibbs</a></td>
+<td>Useful overview of the whole MCMC idea.</td>
+</tr>
+<tr>
+<td>11.3</td>
+<td>Metropolis–Hastings 算法</td>
+<td><a href="https://www.youtube.com/watch?v=j4nEAqUUnVw" target="_blank">Metropolis–Hastings Lecture</a></td>
+<td>Focus on proposal distributions and acceptance probability.</td>
+</tr>
+<tr>
+<td>11.4</td>
+<td>Gibbs 抽样</td>
+<td><a href="https://www.youtube.com/watch?v=k6aZZF2pk7k" target="_blank">Stanford CS221 — Gibbs Sampling</a></td>
+<td>Direct match for Gibbs sampling.</td>
+</tr>
+<tr>
+<td>11.5</td>
+<td>贝叶斯 MCMC 估计方法</td>
+<td>
+<a href="https://www.youtube.com/watch?v=j4nEAqUUnVw" target="_blank">MCMC overview</a><br/>
+<a href="https://www.youtube.com/watch?v=k6aZZF2pk7k" target="_blank">Stanford Gibbs Sampling</a>
+</td>
+<td>Enough for computational intuition, but use the textbook for the exact Bayesian estimation formulation.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="phase" id="bayesianStats">
+<h2>Bayesian Statistics Learning Guide</h2>
+<div class="notice">
+<strong>Resource policy:</strong>
+Bayesian self-study is now designed to stay on <strong>Bilibili</strong> as much as possible.
+All resources below are public and free to watch.
+The main backbone is the bilingual <strong>Ben Lambert — A Student's Guide to Bayesian Statistics</strong>.
+Chinese university lectures are used where they match the textbook more closely.
+The goal is to avoid switching between many websites while still following
+<strong>《贝叶斯统计及其R实现（第2版）》</strong> section by section.
+</div>
+<div class="notice">
+<strong>Main resource order:</strong>
+① Ben Lambert 双语字幕课程：概念、共轭先验、模型比较、MCMC 主线；
+② 西安交通大学梅长林《贝叶斯统计》：先验确定、估计、检验、预测；
+③ 仅在决策理论等少数缺口处使用同一 Bilibili 网站内的补充视频。
+</div>
+<div class="table-scroll">
+<table class="resource-table">
+<thead>
+<tr><th>Section</th><th>Textbook Topic</th><th>Bilibili Course / Video</th><th>How to Use</th></tr>
+</thead>
+<tbody>
+<tr><td>1.1</td><td>引言</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=1" target="_blank">Ben Lambert 双语 — P1 Course syllabus</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=1" target="_blank">西交大梅长林 — P1 绪论</a>
+</td><td>先看中文绪论建立课程框架，再用 Lambert P1 看英文课程结构。此节不需要深挖计算。</td></tr>
+<tr><td>1.2</td><td>概率空间与随机事件贝叶斯公式</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=12" target="_blank">Ben Lambert 双语 — P12 Bayes' rule example 1</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=13" target="_blank">Ben Lambert 双语 — P13 Bayes' rule example 2</a>
+</td><td>直接对应 Bayes rule。重点是条件概率方向、prior、evidence 和 posterior 的关系。</td></tr>
+<tr><td>1.3</td><td>三种信息与先验分布</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=35" target="_blank">西交大梅长林 — P35 主观概率</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=36" target="_blank">西交大梅长林 — P36 利用先验分布信息确定先验分布</a>
+</td><td>这一节教材术语较有自己的组织方式。以教材为主，用这两讲理解“先验信息”从哪里来。</td></tr>
+<tr><td>1.4</td><td>一般形式的贝叶斯公式与后验分布</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=2" target="_blank">西交大梅长林 — P2 后验分布的计算</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=23" target="_blank">Ben Lambert 双语 — P23 Bayesian inference intuition</a>
+</td><td>先用中文课把后验计算做扎实，再看 Lambert 补直觉。</td></tr>
+<tr><td>2.1</td><td>共轭先验分布</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=3" target="_blank">西交大梅长林 — P3 共轭先验分布（一）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=4" target="_blank">P4 共轭先验分布（二）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=5" target="_blank">P5 共轭先验分布（三）</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=30" target="_blank">Ben Lambert 双语 — P30 What is a conjugate prior?</a>
+</td><td>这是重点。中文课负责推导，Lambert 用来检查概念是否真正理解。</td></tr>
+<tr><td>2.2</td><td>多参数先验与后验分布</td><td>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=14" target="_blank">Vassar MATH 347 — P14 Mean &amp; SD posterior I</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=15" target="_blank">P15 Mean &amp; SD posterior II</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=16" target="_blank">P16 Mean &amp; SD posterior III</a>
+</td><td>这一组三讲直接处理均值和标准差的联合后验。英文原课但在 Bilibili，可配合平台字幕使用。</td></tr>
+<tr><td>2.3</td><td>充分统计量与应用</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=45" target="_blank">Ben Lambert 双语 — P45 Introduction to sufficient statistic</a>
+</td><td>先理解 sufficient statistic 的作用，再回教材做其贝叶斯应用。视频偏概念，公式以教材为准。</td></tr>
+<tr><td>3.1</td><td>先验分布类型已知时超参数估计</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=6" target="_blank">西交大梅长林 — P6 超参数及其确定</a>
+</td><td>几乎直接对应教材小节，优先看这一讲。</td></tr>
+<tr><td>3.2</td><td>由边际分布确定先验分布</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=37" target="_blank">西交大梅长林 — P37 利用边缘分布 m(x) 确定先验分布（一）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=38" target="_blank">P38（二）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=39" target="_blank">P39（三）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=40" target="_blank">P40（四）</a>
+</td><td>这是目前找到的最贴教材资源之一。按顺序完整看即可。</td></tr>
+<tr><td>3.3</td><td>用主观概率作为先验概率</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=35" target="_blank">西交大梅长林 — P35 主观概率</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=36" target="_blank">P36 利用先验分布信息确定先验分布</a>
+</td><td>先看 P35 理解主观概率，再看 P36 学如何把信息转成先验分布。</td></tr>
+<tr><td>3.4</td><td>无信息先验分布</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=41" target="_blank">西交大梅长林 — P41 无信息先验分布（一）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=42" target="_blank">P42（二）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=43" target="_blank">P43（三）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=44" target="_blank">P44（四）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=45" target="_blank">P45（五）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=46" target="_blank">P46（六）</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=41" target="_blank">Lambert 双语 — P41 Jeffreys prior I</a>
+</td><td>中文六讲作为主线。Jeffreys prior 不清楚时再看 Lambert P41–43。</td></tr>
+<tr><td>4.1</td><td>贝叶斯估计</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=8" target="_blank">西交大梅长林 — P8 参数的贝叶斯点估计（一）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=9" target="_blank">P9（二）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=10" target="_blank">P10（三）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=11" target="_blank">P11（四）</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=22" target="_blank">Lambert 双语 — P22 credible vs confidence intervals</a>
+</td><td>点估计看 P8–11。若课程进入区间估计，再接西交大 P12–17；Lambert P22 用来理解可信区间。</td></tr>
+<tr><td>4.2</td><td>泊松分布参数的估计</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=27" target="_blank">Ben Lambert 双语 — P27 Poisson distribution I</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=28" target="_blank">P28 Poisson distribution II</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=29" target="_blank">P29 Gamma distribution</a>
+</td><td>把 Poisson likelihood 和 Gamma prior 连起来。之后直接做教材对应例题。</td></tr>
+<tr><td>4.3</td><td>指数分布参数的估计</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=17" target="_blank">Ben Lambert 双语 — P17 Waiting-time likelihood model</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=29" target="_blank">P29 Gamma distribution</a>
+</td><td>这里没有完全按教材排布的视频。用 waiting-time likelihood + Gamma distribution 理解结构，具体后验推导以教材为主。</td></tr>
+<tr><td>4.4</td><td>正态分布参数的估计</td><td>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=13" target="_blank">Vassar MATH 347 — P13 Bayesian inference for a mean</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=14" target="_blank">P14 Prior/posterior for mean &amp; SD I</a> ·
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=15" target="_blank">P15 II</a> ·
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=16" target="_blank">P16 III</a>
+</td><td>这一组与“正态总体均值和方差的贝叶斯推断”匹配度很高。</td></tr>
+<tr><td>4.5</td><td>贝叶斯假设检验</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=18" target="_blank">西交大梅长林 — P18 经典假设检验与贝叶斯假设检验</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=19" target="_blank">P19 贝叶斯因子（一）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=20" target="_blank">P20 贝叶斯因子（二）</a>
+</td><td>先看 P18 建立框架，再看 Bayes factor。若教材要求复杂假设，可继续西交大 P21–28。</td></tr>
+<tr><td>4.6</td><td>模型的比较与选择</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=31" target="_blank">Lambert 双语 — P31 Posterior predictive check</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=36" target="_blank">P36 AIC / DIC / WAIC / LOO-CV</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=37" target="_blank">P37 Bayes factors &amp; marginal likelihoods</a>
+</td><td>模型比较先掌握 posterior predictive check 和 Bayes factor。AIC/WAIC/LOO 属于扩展内容，按老师要求取舍。</td></tr>
+<tr><td>4.7</td><td>贝叶斯统计预测</td><td>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=29" target="_blank">西交大梅长林 — P29 预测（一）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=30" target="_blank">P30（二）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=31" target="_blank">P31（三）</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=24" target="_blank">Lambert 双语 — P24 Posterior predictive distribution</a>
+</td><td>中文三讲作为主线，Lambert P24 用于理解 posterior predictive 的直觉。</td></tr>
+<tr><td>5.1</td><td>决策基本概念</td><td>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=4" target="_blank">中文贝叶斯统计 — P4 决策三要素</a>
+</td><td>直接对应统计决策的基本构成。看完后用教材统一符号。</td></tr>
+<tr><td>5.2</td><td>损失函数</td><td>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=14" target="_blank">中文贝叶斯统计 — P14 常用的损失函数</a>
+</td><td>重点看不同 loss function 如何改变最优决策，而不是只记公式。</td></tr>
+<tr><td>5.3</td><td>贝叶斯决策</td><td>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=19" target="_blank">中文贝叶斯统计 — P19 贝叶斯决策</a>
+</td><td>这一讲作为主线。之后回教材推一次后验期望损失最小化。</td></tr>
+<tr><td>5.4</td><td>抽样的价值</td><td>
+<a href="https://www.bilibili.com/video/BV1HcPqekE4s/?p=31" target="_blank">MIT IDS.333 中英字幕 — P31 Expected Value of Sample Information</a>
+</td><td>这是本节最贴近的公开视频。视频是 MIT 课程并有中文翻译，理解 EVSI 后再对应教材公式。</td></tr>
+<tr><td>6.1</td><td>什么是 MCMC 方法</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=48" target="_blank">Lambert 双语 — P48 Why Bayesian computation becomes difficult</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=51" target="_blank">P51 Independent sampling</a> ·
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=52" target="_blank">P52 Integration by sampling</a> ·
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=58" target="_blank">P58 Why dependent sampling?</a>
+</td><td>不要直接背 MCMC 算法。先弄清楚为什么后验积分难算，以及为什么需要 sampling。</td></tr>
+<tr><td>6.2</td><td>吉布斯抽样</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=67" target="_blank">Lambert 双语 — P67 Introduction to Gibbs sampling</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=68" target="_blank">P68 Deriving a Gibbs sampling routine</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=20" target="_blank">Vassar — P20 Gibbs sampler example &amp; derivation</a>
+</td><td>Lambert 负责算法直觉，Vassar 用一个完整例子把 full conditional 和抽样过程串起来。</td></tr>
+<tr><td>6.3</td><td>Metropolis-Hastings 算法</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=61" target="_blank">Lambert 双语 — P61 Random Walk Metropolis</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=63" target="_blank">P63 Metropolis-Hastings</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=30" target="_blank">Vassar — P30 Metropolis and Metropolis-Hastings</a>
+</td><td>先看 Lambert P61、P63。若 acceptance ratio 推导仍不清楚，再看 Vassar P30。</td></tr>
+<tr><td>6.4</td><td>MCMC 的收敛性问题</td><td>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=65" target="_blank">Lambert 双语 — P65 Multiple chains &amp; convergence</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=66" target="_blank">P66 Overdispersed chains</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=22" target="_blank">Vassar — P22 MCMC diagnostics</a><br/>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=54" target="_blank">中文补充 — P54 MCMC 收敛性判断</a>
+</td><td>重点掌握 trace、multiple chains 和 diagnostics 的含义。中文 P54 可作为考前复习。</td></tr>
+<tr><td>7.1</td><td>风险函数</td><td>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=37" target="_blank">中文贝叶斯统计 — P37 风险函数</a>
+</td><td>直接对应 risk function。注意区分 loss 与 risk。</td></tr>
+<tr><td>7.2</td><td>决策函数的容许性与最小最大准则</td><td>
+<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=2" target="_blank">贝叶斯估计理论性质 — P2 最小最大性</a><br/>
+<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=3" target="_blank">P3 用 Bayes 方法构造最小最大估计</a><br/>
+<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=4" target="_blank">P4 容许性</a>
+</td><td>这是非常贴教材的小专题。三段都看，尤其区分 minimax 与 admissibility。</td></tr>
+<tr><td>7.3</td><td>贝叶斯风险准则与贝叶斯解</td><td>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=41" target="_blank">中文贝叶斯统计 — P41 贝叶斯风险</a><br/>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=19" target="_blank">P19 贝叶斯决策</a>
+</td><td>把 Bayes risk 与第 5 章决策内容联系起来。最后按教材定义整理 Bayes rule / Bayes solution。</td></tr>
+</tbody>
+</table>
+</div>
+<div class="notice" style="margin-top:20px">
+<strong>Practical rule:</strong>
+平时优先在 Bilibili 内完成学习，不再来回切多个平台。
+如果一个小节同时列了两门课，第一条是优先资源，后面的只在第一条讲不清时补看。
+教材中的 R 代码仍以本书示例和课堂要求为准，视频主要负责概念、推导和算法理解。
+</div>
+</div>
+
 </body></html>
