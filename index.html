@@ -222,10 +222,24 @@ window.onload=function(){
 <td>Rest</td><td>Rest</td><td>Review</td><td>Rest</td><td>Free time</td></tr>
 </table>
 </div>
+
 <div class="phase" id="randomProcess">
 <h2>Random Process Learning Guide</h2>
 <div class="notice">
-Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used as supplementary lectures.
+<strong>Resource policy:</strong>
+keep the Random Process course path on <strong>MIT OpenCourseWare</strong> as much as possible.
+The main sequence is <strong>MIT 6.041 → MIT 6.262 → MIT 18.642</strong>.
+All three are public and free, and all official links stay on <strong>ocw.mit.edu</strong>.
+When MIT does not have a strong match, the guide uses <strong>Textbook-first</strong> instead of forcing an unrelated course.
+</div>
+<div class="notice">
+<strong>Main resource order:</strong>
+① MIT 6.041 for probability prerequisites;
+② MIT 6.262 as the main stochastic-process course for Poisson, renewal, Markov and martingales;
+③ MIT 18.642 for Brownian motion, stochastic integration and Black–Scholes.
+If the English in MIT 6.262 is difficult to follow, use
+<a href="https://search.bilibili.com/all?keyword=MIT%206.262%20%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%20%E4%B8%AD%E8%8B%B1%E5%AD%97%E5%B9%95" target="_blank">Bilibili search for MIT 6.262 bilingual / Chinese-subtitle mirrors</a>
+as a language backup, while keeping MIT OCW as the primary stable source.
 </div>
 <div class="table-scroll">
 <table class="resource-table">
@@ -233,7 +247,7 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <tr>
 <th>Section</th>
 <th>Textbook Topic</th>
-<th>Video</th>
+<th>Primary Resource</th>
 <th>How to Use</th>
 </tr>
 </thead>
@@ -241,68 +255,71 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <tr>
 <td>1.1</td>
 <td>概率空间</td>
-<td><a href="https://stat110.hsites.harvard.edu/youtube" target="_blank">Harvard Stat 110 — Lectures 1–5</a></td>
-<td>Probability axioms and basic probability models. Quick review is enough if already familiar.</td>
+<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lectures 1–3</a></td>
+<td>Probability models, axioms, conditioning, Bayes' rule and independence. Quick review is enough if these are already familiar.</td>
 </tr>
 <tr>
 <td>1.2</td>
 <td>随机变量与分布函数</td>
-<td><a href="https://stat110.hsites.harvard.edu/youtube" target="_blank">Harvard Stat 110 — Lectures 7–8, 12–14</a></td>
-<td>Random variables, PMF, CDF, PDF and common continuous distributions.</td>
+<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lectures 5–10</a></td>
+<td>Discrete and continuous random variables, PMF/PDF/CDF, joint distributions and derived distributions.</td>
 </tr>
 <tr>
 <td>1.3</td>
 <td>数字特征、矩母函数与特征函数</td>
-<td><a href="https://stat110.hsites.harvard.edu/youtube" target="_blank">Harvard Stat 110 — Lectures 9, 17–18, 21</a></td>
-<td>Expectation, MGF, variance and covariance. Characteristic functions still need the textbook.</td>
+<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lectures 5, 7, 11–12</a></td>
+<td>Use MIT for expectation, variance, covariance and conditional expectation. <strong>Textbook-first</strong> for MGF and characteristic functions because MIT 6.041 does not cover them in the same depth.</td>
 </tr>
 <tr>
 <td>1.4</td>
 <td>收敛性</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-3-law-of-large-numbers-convergence/" target="_blank">MIT 6.262 — Lecture 3</a></td>
-<td>Law of large numbers and convergence. Very useful for this section.</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-3-law-of-large-numbers-convergence/" target="_blank">MIT 6.262 — Lecture 3</a><br/>
+<a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lecture 19</a>
+</td>
+<td>Start with 6.041 for convergence in probability and the weak law; use 6.262 for the stochastic-process viewpoint.</td>
 </tr>
 <tr>
 <td>1.5</td>
 <td>独立性与条件期望</td>
-<td><a href="https://stat110.hsites.harvard.edu/youtube" target="_blank">Harvard Stat 110 — Lectures 25–27</a></td>
-<td>Focus especially on conditional expectation, which is needed again for martingales.</td>
+<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lectures 3, 7, 12</a></td>
+<td>Focus on independence and iterated conditional expectation. These ideas return later in Markov chains and martingales.</td>
 </tr>
 <tr>
 <td>2.1</td>
 <td>随机过程基本概念</td>
-<td><a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-13/" target="_blank">MIT 6.041 — Lecture 13</a></td>
-<td>Good first introduction to a stochastic process through the Bernoulli process.</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/video_galleries/video-lectures/" target="_blank">MIT 6.262 — Lectures 1–2</a>
+</td>
+<td>Use Lecture 1 for the course-level stochastic-process viewpoint and Lecture 2 for the Bernoulli process as the first concrete process.</td>
 </tr>
 <tr>
 <td>2.2</td>
 <td>有限维分布与 Kolmogorov 定理</td>
-<td><a href="https://mathweb.ucsd.edu/~tkemp/ProbabilityTube/" target="_blank">UCSD Math 280 — Kolmogorov Extension Theorem I–II</a></td>
-<td>More theoretical than the other videos. Use when studying the theorem itself.</td>
+<td><strong>Textbook-first</strong></td>
+<td>MIT 6.262 does not give a sufficiently direct treatment of the Kolmogorov extension theorem. Learn the theorem from the textbook and class notes rather than switching websites for one theorem.</td>
 </tr>
 <tr>
 <td>2.3</td>
 <td>随机过程的基本类型</td>
 <td><a href="https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-8-time-series-analysis-i/" target="_blank">MIT 18.S096 — Lecture 8</a></td>
-<td>Useful mainly for stationary processes.</td>
+<td>Useful mainly for stationary processes and time-series intuition. Use the textbook for the full classification used in your course.</td>
 </tr>
 <tr>
 <td>3.1</td>
 <td>Poisson 过程</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-14/" target="_blank">MIT 6.041 — Lecture 14: Poisson Process I</a><br/>
 <a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-4-poisson-the-perfect-arrival-process/" target="_blank">MIT 6.262 — Lecture 4</a>
 </td>
-<td>Watch 6.041 first for intuition, then 6.262 if you need the deeper treatment.</td>
+<td>Main Poisson-process lecture. Treat this as the primary resource rather than switching between multiple courses.</td>
 </tr>
 <tr>
 <td>3.2</td>
 <td>与 Poisson 过程相关的若干分布</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-15/" target="_blank">MIT 6.041 — Lecture 15</a><br/>
 <a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-5-poisson-combining-and-splitting/" target="_blank">MIT 6.262 — Lecture 5</a>
 </td>
-<td>Interarrival times, splitting, combining and conditioning.</td>
+<td>Interarrival times, splitting, combining and conditioning. Pair the lecture with the textbook examples.</td>
 </tr>
 <tr>
 <td>3.3</td>
@@ -311,7 +328,7 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-5-poisson-combining-and-splitting/" target="_blank">MIT 6.262 — Lecture 5</a><br/>
 <a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-6-from-poisson-to-markov/" target="_blank">MIT 6.262 — Lecture 6</a>
 </td>
-<td>Partial match. Some textbook extensions still need to be read directly.</td>
+<td>Partial match. Use the textbook for extensions not explicitly treated in the MIT lectures.</td>
 </tr>
 <tr>
 <td>4.1</td>
@@ -326,49 +343,48 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-11-renewals-strong-law-and-rewards/" target="_blank">MIT 6.262 — Lecture 11</a><br/>
 <a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-12-renewal-rewards-stopping-trials-and-walds-inequality/" target="_blank">MIT 6.262 — Lecture 12</a>
 </td>
-<td>Renewal rewards and related applications.</td>
+<td>Renewal rewards, stopping trials and Wald-type arguments. Use the textbook for the exact renewal-equation notation.</td>
 </tr>
 <tr>
 <td>4.3</td>
 <td>更新定理</td>
 <td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-15-the-last-renewal/" target="_blank">MIT 6.262 — Lecture 15</a></td>
-<td>Includes the elementary renewal theorem and Blackwell theorem.</td>
+<td>Use this with the textbook for the elementary renewal theorem and limiting renewal results.</td>
 </tr>
 <tr>
 <td>4.4</td>
 <td>更新过程的推广</td>
 <td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-16-renewals-and-countable-state-markov/" target="_blank">MIT 6.262 — Lecture 16</a></td>
-<td>Useful for extensions and the connection to Markov processes.</td>
+<td>Useful for extensions and for the transition from renewal processes to countable-state Markov chains.</td>
 </tr>
 <tr>
 <td>5.1</td>
 <td>Markov 链基本概念</td>
-<td>
-<a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-16/" target="_blank">MIT 6.041 — Lecture 16</a><br/>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-7-finite-state-markov-chains-the-matrix-approach/" target="_blank">MIT 6.262 — Lecture 7</a>
-</td>
-<td>Start with 6.041. Use 6.262 for the matrix formulation.</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-7-finite-state-markov-chains-the-matrix-approach/" target="_blank">MIT 6.262 — Lecture 7</a></td>
+<td>Transition matrices and the matrix approach. Use this as the main Markov-chain introduction.</td>
 </tr>
 <tr>
 <td>5.2</td>
 <td>状态的分类及性质</td>
-<td><a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-16/" target="_blank">MIT 6.041 — Lecture 16</a></td>
-<td>Recurrent, transient, periodic and ergodic states.</td>
+<td>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-17-countable-state-markov-chains/" target="_blank">MIT 6.262 — Lecture 17</a>
+</td>
+<td>Positive/null recurrence, steady state and related state properties. For finite-state terminology, review Lecture 7 if needed.</td>
 </tr>
 <tr>
 <td>5.3</td>
 <td>极限定理及平稳分布</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-17/" target="_blank">MIT 6.041 — Lecture 17</a><br/>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-8-markov-eigenvalues-and-eigenvectors/" target="_blank">MIT 6.262 — Lecture 8</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-8-markov-eigenvalues-and-eigenvectors/" target="_blank">MIT 6.262 — Lecture 8</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-17-countable-state-markov-chains/" target="_blank">MIT 6.262 — Lecture 17</a>
 </td>
-<td>Steady-state probabilities and long-run behavior.</td>
+<td>Lecture 8 develops steady-state vectors for finite chains; Lecture 17 extends the discussion to countable-state chains.</td>
 </tr>
 <tr>
 <td>5.4</td>
 <td>Markov 链的应用</td>
-<td><a href="https://ocw.mit.edu/courses/6-041sc-probabilistic-systems-analysis-and-applied-probability-fall-2013/pages/unit-iii/lecture-18/" target="_blank">MIT 6.041 — Lecture 18</a></td>
-<td>Absorption probabilities, expected absorption time and first passage.</td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-9-markov-rewards-and-dynamic-programming/" target="_blank">MIT 6.262 — Lecture 9</a></td>
+<td>Expected first-passage time, rewards and dynamic programming. Good application-oriented lecture.</td>
 </tr>
 <tr>
 <td>5.5</td>
@@ -377,7 +393,7 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-18-countable-state-markov-chains-and-processes/" target="_blank">MIT 6.262 — Lecture 18</a><br/>
 <a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-19-countable-state-markov-processes/" target="_blank">MIT 6.262 — Lecture 19</a>
 </td>
-<td>Main material for continuous-time Markov processes.</td>
+<td>Main material for countable-state continuous-time Markov processes.</td>
 </tr>
 <tr>
 <td>6.1</td>
@@ -389,19 +405,19 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <td>6.2</td>
 <td>鞅的停时定理及其应用</td>
 <td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank">MIT 6.262 — Lecture 24</a></td>
-<td>Core video for stopping times and optional stopping.</td>
+<td>Stopping times, optional-stopping ideas and convergence.</td>
 </tr>
 <tr>
 <td>6.3</td>
 <td>一致可积性</td>
-<td>No strong matching US undergraduate video</td>
-<td>Use the textbook and your lecture notes for this section.</td>
+<td><strong>Textbook-first</strong></td>
+<td>No sufficiently direct MIT video match. Use the textbook and your class notes.</td>
 </tr>
 <tr>
 <td>6.4</td>
 <td>鞅收敛定理</td>
 <td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank">MIT 6.262 — Lecture 24</a></td>
-<td>Includes martingale convergence.</td>
+<td>Use this as the main video and follow the theorem statements in the textbook.</td>
 </tr>
 <tr>
 <td>6.5</td>
@@ -410,29 +426,28 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a><br/>
 <a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
 </td>
-<td>Useful as a bridge into continuous-time stochastic calculus.</td>
+<td>Use these as a bridge from discrete-time martingales to continuous-time stochastic calculus.</td>
 </tr>
 <tr>
 <td>7.1</td>
 <td>Brown 运动基本概念与性质</td>
 <td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
-<td>Main Brownian motion lecture.</td>
+<td>Main Brownian-motion lecture. This becomes the core resource for most of Chapter 7.</td>
 </tr>
 <tr>
 <td>7.2</td>
 <td>Gauss 过程</td>
 <td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
-<td>Brownian motion as the central Gaussian-process example. General Gaussian processes still require the textbook.</td>
+<td>Brownian motion is treated as the central Gaussian-process example. <strong>Textbook-first</strong> for general Gaussian processes.</td>
 </tr>
 <tr>
 <td>7.3</td>
 <td>Brown 运动的鞅性质</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-23-martingales-plain-sub-and-super/" target="_blank">MIT 6.262 — Lecture 23</a><br/>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank">MIT 6.262 — Lecture 24</a><br/>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-23-martingales-plain-sub-and-super/" target="_blank">MIT 6.262 — Lecture 23</a>
 </td>
-<td>Combine the martingale lectures with the Brownian motion lecture.</td>
+<td>Combine Brownian-motion properties with the martingale framework from 6.262.</td>
 </tr>
 <tr>
 <td>7.4</td>
@@ -444,7 +459,7 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <td>7.5</td>
 <td>最大值变量及反正弦律</td>
 <td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
-<td>Reflection principle and Brownian maximum are covered. Arcsine law is less complete.</td>
+<td>Reflection principle and Brownian maximum are useful matches. <strong>Textbook-first</strong> for the arcsine law.</td>
 </tr>
 <tr>
 <td>7.6</td>
@@ -456,25 +471,28 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <td>7.7</td>
 <td>高维 Brown 运动</td>
 <td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
-<td>Includes two-dimensional Brownian motion.</td>
+<td>Includes higher-dimensional Brownian-motion discussion; use the textbook for the full formal development.</td>
 </tr>
 <tr>
 <td>8.1</td>
 <td>关于随机游动的积分</td>
-<td>Textbook first → <a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a></td>
-<td>The MIT lecture starts at stochastic calculus, so use the textbook for the discrete motivation.</td>
+<td>
+<strong>Textbook-first</strong><br/>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a>
+</td>
+<td>Use the textbook for the discrete motivation, then MIT for the continuous stochastic-calculus transition.</td>
 </tr>
 <tr>
 <td>8.2</td>
 <td>关于 Brown 运动的积分</td>
 <td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24: Stochastic Calculus</a></td>
-<td>Directly relevant to the construction of the Itô integral.</td>
+<td>Directly relevant to stochastic integration with Brownian motion.</td>
 </tr>
 <tr>
 <td>8.3</td>
 <td>Itô 积分过程</td>
 <td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a></td>
-<td>Itô integral and Itô isometry.</td>
+<td>Itô integral and its basic properties.</td>
 </tr>
 <tr>
 <td>8.4</td>
@@ -483,13 +501,13 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a><br/>
 <a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
 </td>
-<td>Lecture 24 introduces Itô's formula and Lecture 25 develops the applications.</td>
+<td>Lecture 24 introduces Itô's formula; Lecture 25 develops applications and stochastic differential equations.</td>
 </tr>
 <tr>
 <td>9.1</td>
 <td>金融市场术语与基本假定</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/lecture-videos/" target="_blank">MIT 18.642 — Finance Lectures</a></td>
-<td>Use only the necessary financial background rather than watching the entire course.</td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/lecture-videos/" target="_blank">MIT 18.642 — Finance lecture sequence</a></td>
+<td>Only watch the financial-background material needed for your textbook. Do not treat the whole finance course as required.</td>
 </tr>
 <tr>
 <td>9.2</td>
@@ -498,19 +516,19 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-21-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 21: Black–Scholes</a><br/>
 <a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
 </td>
-<td>Very close to the textbook Black–Scholes material.</td>
+<td>Lecture 21 is the main Black–Scholes resource; Lecture 25 connects the model to stochastic calculus.</td>
 </tr>
 <tr>
 <td>10.1</td>
 <td>保险精算基本概念</td>
-<td>No strong matching free US video course</td>
-<td>Use textbook and class lectures.</td>
+<td><strong>Textbook-first</strong></td>
+<td>No sufficiently close MIT OCW video match. Use the textbook and class lectures.</td>
 </tr>
 <tr>
 <td>10.2</td>
 <td>经典破产理论介绍</td>
-<td>No strong matching free US video course</td>
-<td>Use textbook and class lectures.</td>
+<td><strong>Textbook-first</strong></td>
+<td>No sufficiently close MIT OCW video match. Keep this section textbook-based instead of switching to another platform.</td>
 </tr>
 <tr>
 <td>11.1</td>
@@ -521,32 +539,39 @@ Textbook-aligned video guide. MIT, Harvard, UCSD, and Stanford courses are used 
 <tr>
 <td>11.2</td>
 <td>Markov Chain Monte Carlo 方法简介</td>
-<td><a href="https://www.youtube.com/watch?v=j4nEAqUUnVw" target="_blank">MCMC Lecture — Metropolis-Hastings and Gibbs</a></td>
-<td>Useful overview of the whole MCMC idea.</td>
+<td>
+<a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/pages/lecture-notes/" target="_blank">MIT 14.384 — Lectures 25–26: MCMC</a>
+</td>
+<td><strong>Textbook-first for the overall MCMC framework.</strong> MIT Lecture 25 covers Metropolis–Hastings and Lecture 26 covers Gibbs sampling.</td>
 </tr>
 <tr>
 <td>11.3</td>
 <td>Metropolis–Hastings 算法</td>
-<td><a href="https://www.youtube.com/watch?v=j4nEAqUUnVw" target="_blank">Metropolis–Hastings Lecture</a></td>
-<td>Focus on proposal distributions and acceptance probability.</td>
+<td><a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/resources/mit14_384f13_lec25/" target="_blank">MIT 14.384 — Lecture 25: Metropolis–Hastings</a></td>
+<td>Focus on proposal distributions, acceptance probability and invariant target distributions. The notes are more theoretical than the earlier videos.</td>
 </tr>
 <tr>
 <td>11.4</td>
 <td>Gibbs 抽样</td>
-<td><a href="https://www.youtube.com/watch?v=k6aZZF2pk7k" target="_blank">Stanford CS221 — Gibbs Sampling</a></td>
-<td>Direct match for Gibbs sampling.</td>
+<td><a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/resources/mit14_384f13_lec26/" target="_blank">MIT 14.384 — Lecture 26: Gibbs Sampling</a></td>
+<td>Use the notes for conditional distributions and the Gibbs update mechanism; then work the textbook example.</td>
 </tr>
 <tr>
 <td>11.5</td>
 <td>贝叶斯 MCMC 估计方法</td>
 <td>
-<a href="https://www.youtube.com/watch?v=j4nEAqUUnVw" target="_blank">MCMC overview</a><br/>
-<a href="https://www.youtube.com/watch?v=k6aZZF2pk7k" target="_blank">Stanford Gibbs Sampling</a>
+<a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/pages/lecture-notes/" target="_blank">MIT 14.384 — Bayesian + MCMC notes</a>
 </td>
-<td>Enough for computational intuition, but use the textbook for the exact Bayesian estimation formulation.</td>
+<td>Use the textbook for the exact Bayesian estimation formulation. MIT provides the computational MCMC machinery and examples.</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="notice" style="margin-top:20px">
+<strong>Practical rule:</strong>
+stay on MIT OCW for the main study path.
+If a row says <strong>Textbook-first</strong>, do not spend time hunting for another course unless the textbook explanation is insufficient.
+The Bilibili entry above is only a subtitle backup for MIT 6.262, not a second required course.
 </div>
 </div>
 
@@ -719,5 +744,4 @@ The goal is to avoid switching between many websites while still following
 教材中的 R 代码仍以本书示例和课堂要求为准，视频主要负责概念、推导和算法理解。
 </div>
 </div>
-
 </body></html>
