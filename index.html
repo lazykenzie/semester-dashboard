@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<title>Semester Self Learning Dashboard v8</title>
-<style>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Semester Self-Learning Dashboard · 2026–2027</title><style>
 body{font-family:-apple-system,BlinkMacSystemFont,"Microsoft YaHei",sans-serif;background:#fbf6fc;margin:30px;color:#222}
 h1{text-align:center;color:#532087}
 h2{text-align:center;color:#9035b7}
@@ -54,176 +49,21 @@ input{transform:scale(1.15)}
     font-weight:bold;
 }
 
-</style>
-<script>
-function showPhase(id){
- document.querySelectorAll(".phase").forEach(x=>x.style.display="none");
- document.getElementById(id).style.display="block";
-}
-function saveChecks(){
- document.querySelectorAll("input[type=checkbox]").forEach((x,i)=>localStorage.setItem(location.pathname+"_"+i,x.checked));
-}
-function resetChecks(){
- if(confirm("Reset this week's progress?")){
-  document.querySelectorAll("input[type=checkbox]").forEach((x,i)=>{
-   x.checked=false;
-   localStorage.removeItem(location.pathname+"_"+i);
-  });
- }
-}
-window.onload=function(){
- document.querySelectorAll("input[type=checkbox]").forEach((x,i)=>{
- x.checked=localStorage.getItem(location.pathname+"_"+i)==="true";
- x.onchange=saveChecks;
- });
- showPhase("phase1");
-}
-</script>
-</head>
-<body>
-<h1>Semester Self-Learning Dashboard</h1>
-<div class="notice">
-🚀 This semester's mission: survive the difficult courses, keep Text-2-Datalog moving, and slowly build the skills needed for a Data/AI internship. Progress beats perfection.
-</div>
-<div style="text-align:center">
-<button class="phase-btn" onclick="showPhase('phase1')">Phase 1: SQL Foundation</button>
-<button class="phase-btn" onclick="showPhase('phase2')">Phase 2: Data Skill Building</button>
-<button class="phase-btn" onclick="showPhase('phase3')">Phase 3: Basic ML Review</button>
-<button class="phase-btn" onclick="showPhase('randomProcess')">Random Process Guide</button>
-<button class="phase-btn" onclick="showPhase('bayesianStats')">Bayesian Statistics Guide</button>
-<button onclick="resetChecks()">Weekly Reset</button>
-</div>
-<div class="phase" id="phase1">
-<h2>Phase 1</h2>
-<table>
-<tr><th class="time header">Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
-<tr><td class="time">08:15-09:45</td>
-<td class="card"><input type="checkbox"/> Econometrics self-learning<br/>Ben Lambert Econometrics<br/>Focus: OLS intuition, assumptions, hypothesis testing<br/><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
-<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
-<td class="card"><input type="checkbox"/> Research maintenance</td>
-<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
-</tr>
-<tr><td class="time">10:05-11:35</td>
-<td class="card"><input type="checkbox"/> Econometrics exercises<br/>Wooldridge problems + notes</td>
-<td class="card"><input type="checkbox"/> Research deep work</td>
-<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
-<td class="card"><input type="checkbox"/> Internship practice<br/>LeetCode SQL 50: <a href="https://leetcode.com/studyplan/top-sql-50/">Open</a></td>
-<td class="card"><input type="checkbox"/> Research deep work</td>
-</tr>
-<tr><td class="time">13:00-14:30</td>
-<td>Free / lunch</td>
-<td class="card"><input type="checkbox"/> Random Process <self-learning></self-learning></td>
-<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
-<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
-<td class="card"><input type="checkbox"/> Bayesian consolidation<br/>Use Bayesian Statistics Guide</td>
-</tr>
-<tr><td class="time">14:50-16:20</td>
-<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Random Process exercises</td>
-<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br/>If self-study: English only</td>
-<td class="fixed"><input type="checkbox"/> Operations Research fixed class<br/><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Bayesian exercises<br/>Use textbook + Bayesian Statistics Guide</td>
-</tr>
-<tr><td class="time">16:30-18:00</td>
-<td class="fixed"><input type="checkbox"/> NLP fixed class</td>
-<td>Rest / exercise</td>
-<td class="fixed"><input type="checkbox"/> Multivariate Statistical Analysis</td>
-<td class="fixed"><input type="checkbox"/> Database Principles and Practice<br/><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br/>15:50-17:00</td>
-<td class="card"><input type="checkbox"/> Internship practice<br/>LeetCode SQL 50: <a href="https://leetcode.com/studyplan/top-sql-50/">Open</a></td>
-</tr>
-<tr><td class="time">18:20-20:35</td>
-<td>Rest</td><td>Rest</td><td>Review</td><td>Rest</td><td>Free time</td></tr>
-</table>
-</div>
-<div class="phase" id="phase2">
-<h2>Phase 2</h2>
-<table>
-<tr><th class="time header">Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
-<tr><td class="time">08:15-09:45</td>
-<td class="card"><input type="checkbox"/> Econometrics self-learning<br/>Ben Lambert Econometrics<br/>Focus: OLS intuition, assumptions, hypothesis testing<br/><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
-<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
-<td class="card"><input type="checkbox"/> Research maintenance</td>
-<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
-</tr>
-<tr><td class="time">10:05-11:35</td>
-<td class="card"><input type="checkbox"/> Econometrics exercises<br/>Wooldridge problems + notes</td>
-<td class="card"><input type="checkbox"/> Research deep work</td>
-<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
-<td class="card"><input type="checkbox"/> Internship practice<br/>Kaggle Python: <a href="https://www.kaggle.com/learn/python">Open</a><br/>Kaggle Pandas: <a href="https://www.kaggle.com/learn/pandas">Open</a></td>
-<td class="card"><input type="checkbox"/> Research deep work</td>
-</tr>
-<tr><td class="time">13:00-14:30</td>
-<td>Free / lunch</td>
-<td class="card"><input type="checkbox"/> Random Process <self-learning></self-learning></td>
-<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
-<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
-<td class="card"><input type="checkbox"/> Bayesian consolidation<br/>Use Bayesian Statistics Guide</td>
-</tr>
-<tr><td class="time">14:50-16:20</td>
-<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Random Process exercises</td>
-<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br/>If self-study: English only</td>
-<td class="fixed"><input type="checkbox"/> Operations Research fixed class<br/><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Bayesian exercises<br/>Use textbook + Bayesian Statistics Guide</td>
-</tr>
-<tr><td class="time">16:30-18:00</td>
-<td class="fixed"><input type="checkbox"/> NLP fixed class</td>
-<td>Rest / exercise</td>
-<td class="fixed"><input type="checkbox"/> Multivariate Statistical Analysis</td>
-<td class="fixed"><input type="checkbox"/> Database Principles and Practice<br/><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br/>15:50-17:00</td>
-<td class="card"><input type="checkbox"/> Internship practice<br/>Kaggle Python: <a href="https://www.kaggle.com/learn/python">Open</a><br/>Kaggle Pandas: <a href="https://www.kaggle.com/learn/pandas">Open</a></td>
-</tr>
-<tr><td class="time">18:20-20:35</td>
-<td>Rest</td><td>Rest</td><td>Review</td><td>Rest</td><td>Free time</td></tr>
-</table>
-</div>
-<div class="phase" id="phase3">
-<h2>Phase 3</h2>
-<table>
-<tr><th class="time header">Time</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
-<tr><td class="time">08:15-09:45</td>
-<td class="card"><input type="checkbox"/> Econometrics self-learning<br/>Ben Lambert Econometrics<br/>Focus: OLS intuition, assumptions, hypothesis testing<br/><a href="https://www.youtube.com/@SpartacanUsuals">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
-<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
-<td class="card"><input type="checkbox"/> Research maintenance</td>
-<td class="card"><input type="checkbox"/> Text-2-Datalog research block</td>
-</tr>
-<tr><td class="time">10:05-11:35</td>
-<td class="card"><input type="checkbox"/> Econometrics exercises<br/>Wooldridge problems + notes</td>
-<td class="card"><input type="checkbox"/> Research deep work</td>
-<td class="fixed"><input type="checkbox"/> Random Process fixed class</td>
-<td class="card"><input type="checkbox"/> Internship practice<br/>Kaggle Intro ML: <a href="https://www.kaggle.com/learn/intro-to-machine-learning">Open</a><br/>Scikit-learn: <a href="https://scikit-learn.org/stable/user_guide.html">Open</a></td>
-<td class="card"><input type="checkbox"/> Research deep work</td>
-</tr>
-<tr><td class="time">13:00-14:30</td>
-<td>Free / lunch</td>
-<td class="card"><input type="checkbox"/> Random Process self-learning</td>
-<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
-<td class="fixed"><input type="checkbox"/> Bayesian Statistics fixed class</td>
-<td class="card"><input type="checkbox"/> Bayesian consolidation<br/>Use Bayesian Statistics Guide</td>
-</tr>
-<tr><td class="time">14:50-16:20</td>
-<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Random Process exercises</td>
-<td class="fixed"><input type="checkbox"/> Advanced English fixed class<br/><a href="https://www.youtube.com/results?search_query=advanced+english+course">Course Video</a><br/>If self-study: English only</td>
-<td class="fixed"><input type="checkbox"/> Operations Research fixed class<br/><a href="https://www.youtube.com/results?search_query=operations+research+course">Course Video</a></td>
-<td class="card"><input type="checkbox"/> Bayesian exercises<br/>Use textbook + Bayesian Statistics Guide</td>
-</tr>
-<tr><td class="time">16:30-18:00</td>
-<td class="fixed"><input type="checkbox"/> NLP fixed class</td>
-<td>Rest / exercise</td>
-<td class="fixed"><input type="checkbox"/> Multivariate Statistical Analysis</td>
-<td class="fixed"><input type="checkbox"/> Database Principles and Practice<br/><a href="https://www.youtube.com/results?search_query=database+systems+course">Course Video</a><br/>15:50-17:00</td>
-<td class="card"><input type="checkbox"/> Internship practice<br/>Kaggle Intro ML: <a href="https://www.kaggle.com/learn/intro-to-machine-learning">Open</a><br/>Scikit-learn: <a href="https://scikit-learn.org/stable/user_guide.html">Open</a></td>
-</tr>
-<tr><td class="time">18:20-20:35</td>
-<td>Rest</td><td>Rest</td><td>Review</td><td>Rest</td><td>Free time</td></tr>
-</table>
-</div>
 
-<div class="phase" id="randomProcess">
+body{max-width:1500px;margin:28px auto;padding:0 24px;line-height:1.65}
+h3{color:#672892;margin-top:30px}h1{margin-bottom:8px}.subtitle{text-align:center;color:#735a80;margin-top:0}
+.phase{display:none}.phase.active{display:block}.phase-btn[aria-pressed="true"]{background:#9035b7;color:white}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:2px;margin:14px 0 24px}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #532087;outline-offset:3px}
+.schedule{min-width:1000px;table-layout:fixed;margin-top:0}.schedule .time{width:62px}.schedule td{font-size:13px;overflow-wrap:anywhere}
+.schedule caption{text-align:left;color:#735a80;padding:10px 0}.free{color:#897b90;font-size:12px!important}
+.notice{margin-top:16px;line-height:1.7}.resource-table{margin-top:0}.resource-table th:nth-child(n){width:auto}.resource-table th:first-child{min-width:100px}.resource-table td{min-width:140px}
+.checklist{padding:16px;background:#fbeeff;border-radius:10px}.checklist label{display:block;margin:10px 0}.back{text-align:center;margin:30px 0}
+small,.muted{color:#725d7d}footer{border-top:1px solid #dbc6e8;margin-top:32px;padding:18px 0;color:#725d7d;font-size:13px}
+#storage-status{color:#735a80;text-align:center;font-size:12px}.phase h2:focus{outline:none}
+@media(max-width:700px){body{margin:16px auto;padding:0 12px}h1{font-size:25px}h2{font-size:21px}button{padding:10px 12px;margin:3px}.notice{text-align:left}.resource-table{min-width:950px}}
+@media print{nav,.back,button{display:none}.phase{display:block!important;break-before:page}.table-scroll{overflow:visible}.resource-table,.schedule{min-width:0;font-size:10px}td,th{font-size:10px!important;padding:5px}body{padding:0;margin:0}}
+</style></head><body><h1>Semester Self-Learning Dashboard</h1><p class="subtitle">2026秋 → 2027寒假 · GPA / Research / AI × HCI / Internship</p><div class="notice">校内课程与科研优先，跨方向稳步推进。黄色固定课以你上传的图片为准；你已确认原“选课”格均为空闲，现已纳入学习安排。<br/><strong>周一计量经济学第3–4节固定保留。</strong> 新指南的视频优先B站中文字幕 / 双语字幕，官方教材用于习题与代码核对。</div><nav aria-label="学习页面"><button type="button" class="phase-btn" id="nav-phase1" data-phase="phase1" aria-controls="phase1" aria-pressed="false">Phase 1 · 基础</button><button type="button" class="phase-btn" id="nav-phase2" data-phase="phase2" aria-controls="phase2" aria-pressed="false">Phase 2 · 原型</button><button type="button" class="phase-btn" id="nav-phase3" data-phase="phase3" aria-controls="phase3" aria-pressed="false">Phase 3 · 收尾</button><button type="button" class="phase-btn" id="nav-randomProcess" data-phase="randomProcess" aria-controls="randomProcess" aria-pressed="false">Random Process Guide</button><button type="button" class="phase-btn" id="nav-bayesianStats" data-phase="bayesianStats" aria-controls="bayesianStats" aria-pressed="false">Bayesian Statistics Guide</button><button type="button" class="phase-btn" id="nav-cppGuide" data-phase="cppGuide" aria-controls="cppGuide" aria-pressed="false">C++ + Data Structures</button><button type="button" class="phase-btn" id="nav-hciGuide" data-phase="hciGuide" aria-controls="hciGuide" aria-pressed="false">HCI / Human-AI Interaction</button><button type="button" class="phase-btn" id="nav-internshipGuide" data-phase="internshipGuide" aria-controls="internshipGuide" aria-pressed="false">Internship Preparation</button><button type="button" id="weekly-reset">Weekly Reset</button></nav><p id="storage-status" role="status">勾选保存在当前浏览器；三个安排阶段共用本周任务进度。Weekly Reset 仅清空周任务。</p><main><section class="phase" id="phase1" aria-labelledby="phase1-title"><h2 id="phase1-title" tabindex="-1">Phase 1 · 基础与摸底｜9.28–10.18</h2><div class="notice">C++开始动手；HCI找问题；SQL恢复与简历初稿。 <strong>课表钟点未提供，所有固定课均按图片节次记录。</strong> 紫色块中的分钟是建议学习量，不是学校上下课时间。</div><div class="table-scroll"><table class="schedule"><caption>按上传课表节次安排 · 黄色为固定课，紫色为学习计划，留白用于休息和机动；原“选课”格已按空闲安排</caption><thead><tr><th class="time header" scope="col">节次</th><th scope="col">周一</th><th scope="col">周二</th><th scope="col">周三</th><th scope="col">周四</th><th scope="col">周五</th></tr></thead><tbody><tr><th scope="row" class="time">第1节</th><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-0" data-scope="weekly" data-task="0"/> C++ + DS · C++语法 / 指针<br/><a href="#cppGuide">新知识 / 示例</a></label><br/><small>80分钟</small></td><td rowspan="4" class="card"><label><input type="checkbox" id="week-1-7" data-scope="weekly" data-task="7"/> Text-to-Datalog 科研深度工作<br/>前半：读论文 / 定义实验；后半：实现 / 记录</label><br/><small>160分钟；中间休息</small></td><td rowspan="3" class="fixed"><strong>随机过程</strong><br/>固定课 · 第1–3节<br/>1–17周</td><td class="free">留白 / 休息 / 机动</td><td rowspan="4" class="card"><label><input type="checkbox" id="week-1-8" data-scope="weekly" data-task="8"/> Text-to-Datalog 科研深度工作<br/>前半：跑实验 / 分析失败；后半：整理本周进展</label><br/><small>160分钟；中间休息</small></td></tr><tr><th scope="row" class="time">第2节</th><td rowspan="3" class="fixed"><strong>运筹学与优化方法</strong><br/>固定课 · 第2–4节<br/>1–17周</td></tr><tr><th scope="row" class="time">第3节</th><td rowspan="2" class="fixed"><strong>计量经济学</strong><br/>固定课 · 第3–4节<br/>1–17周</td></tr><tr><th scope="row" class="time">第4节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-1-11" data-scope="weekly" data-task="11"/> 随机过程课后回忆 / 休息</label><br/><small>15–20分钟；不再开新课</small></td></tr><tr><th scope="row" class="time">第5节</th><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-9" data-scope="weekly" data-task="9"/> 计量经济学作业 / 课堂例题重做</label><br/><small>60–80分钟；优先当周作业</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-10" data-scope="weekly" data-task="10"/> 随机过程预习 / 习题<br/><a href="#randomProcess">Random Process Guide</a></label><br/><small>80分钟；为周三课做准备</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-3" data-scope="weekly" data-task="3"/> HCI · 观察 / 访谈<br/><a href="#hciGuide">课程 + 设计练习</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>贝叶斯统计</strong><br/>固定课 · 第5–6节<br/>1–17周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-2" data-scope="weekly" data-task="2"/> C++ + DS · 题目与错题复盘<br/><a href="#cppGuide">练习路线</a></label><br/><small>80分钟</small></td></tr><tr><th scope="row" class="time">第6节</th></tr><tr><th scope="row" class="time">第7节</th><td rowspan="2" class="fixed"><strong>高级英语 I</strong><br/>固定课 · 第7–8节<br/>1–16周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-1" data-scope="weekly" data-task="1"/> C++ + DS · C++练习 / 链表<br/><a href="#cppGuide">闭卷实现 / 调试</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>高级英语 I</strong><br/>固定课 · 第7–8节<br/>1–16周</td><td rowspan="3" class="fixed"><strong>数据库原理与实践</strong><br/>固定课 · 第7–9节<br/>1–17周</td><td rowspan="4" class="card"><label><input type="checkbox" id="week-1-5" data-scope="weekly" data-task="5"/> AI × HCI 共享项目 · 观察 / 访谈<br/><a href="#hciGuide">实现 / 测试 / 迭代</a><br/>兼作实习项目证据</label><br/><small>120分钟；其余时间休息</small></td></tr><tr><th scope="row" class="time">第8节</th></tr><tr><th scope="row" class="time">第9节</th><td rowspan="3" class="fixed"><strong>自然语言处理</strong><br/>固定课 · 第9–11节<br/>1–17周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-6" data-scope="weekly" data-task="6"/> 实习准备 · SQL基础 + 简历<br/><a href="#internshipGuide">SQL / 简历 / 定向投递</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>多元统计分析</strong><br/>固定课 · 第9–10节<br/>1–17周</td></tr><tr><th scope="row" class="time">第10节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-1-13" data-scope="weekly" data-task="13"/> 数据库课后复盘 / SQL作业</label><br/><small>30分钟；与实习SQL共用错题</small></td></tr><tr><th scope="row" class="time">第11节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-1-16" data-scope="weekly" data-task="16"/> 运筹学预习 / 上周错题</label><br/><small>40分钟；以校内要求为主</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-12" data-scope="weekly" data-task="12"/> 多元统计课后复盘 / 习题</label><br/><small>60分钟；课后趁热整理</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-1-4" data-scope="weekly" data-task="4"/> HCI · 整理周五项目任务<br/><a href="#hciGuide">阶段目标</a></label><br/><small>40分钟</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-1-15" data-scope="weekly" data-task="15"/> 贝叶斯习题 / 巩固<br/><a href="#bayesianStats">教材对应 Guide</a></label><br/><small>60–80分钟；完成后结束学习</small></td></tr><tr><th scope="row" class="time">第12节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-1-18" data-scope="weekly" data-task="18"/> NLP课后回忆 / 休息</label><br/><small>15分钟；整理1个疑问</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-1-17" data-scope="weekly" data-task="17"/> 高级英语作业 / 精读</label><br/><small>30–40分钟；完成即休息</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-1-14" data-scope="weekly" data-task="14"/> 贝叶斯当日复盘<br/><a href="#bayesianStats">Bayesian Statistics Guide</a></label><br/><small>40分钟；概念 / 推导</small></td></tr><tr><th scope="row" class="time">第13节</th><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td rowspan="2" class="fixed"><strong>形势与政策 五</strong><br/>固定课 · 第13–14节<br/>第5–8周 · BB平台线上学习</td></tr><tr><th scope="row" class="time">第14节</th><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td></tr></tbody></table></div><h3>周末与负载规则</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">模块</th><th scope="col">建议安排</th><th scope="col">执行规则</th></tr></thead><tbody><tr><td>跨方向共计9小时20分 / 周</td><td>C++ 240分钟 + HCI 120分钟 + 实习80分钟 + 周五共享项目120分钟</td><td>利用原“选课”空闲格，增加一次C++练习；项目移到周五下午。学习量包含视频、做题与投递，不在课表外重复加码。</td></tr><tr><td>校内课与科研</td><td>周二 / 周五第1–4节各160分钟科研；随机 / 贝叶斯复习改在工作日</td><td>周二预习随机过程，周三课后回忆；周四复盘贝叶斯，周五做题。计量、运筹、英语、多元统计、NLP、数据库均有课后或作业块。</td></tr><tr><td>周末与晚间</td><td>周末最多一个2小时机动块，其余休息 / 运动 / 社交</td><td>核心任务已排入工作日。第13–14节原则上保留自由时间；周五第5–8周按图完成形势与政策。周末只补最重要的未完成任务，不追加整套网课。</td></tr><tr><td>降载触发</td><td>有期中 / 大作业 / 面试，先删项目拓展与新增视频</td><td>期末前两周：C++45分钟旧题 + 实习维护30分钟，其余自学暂停；时间归还课程复习。欠账顺延，不在下周翻倍。</td></tr><tr><td>校内复习方法</td><td>计量：课堂例题重做；随机 / 贝叶斯：当周教材+习题</td><td>NLP / 数据库作业优先服务项目，英语按课内要求，多元统计 / 运筹每周在作业机动中各复盘一次。不用网课替代到课。</td></tr></tbody></table></div><h3>后续路线 · 共用能力，按证据再分支</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">时间</th><th scope="col">共同任务</th><th scope="col">决策 / 验收</th></tr></thead><tbody><tr><td>本月</td><td>查清专业排名、推免比例、加分规则</td><td>3.78/4不能独立判断推免机会。保住校内课与科研，建立招生信息核验清单。</td></tr><tr><td>2027寒假</td><td>图 / 查找 / 排序补齐；完成AI×HCI案例；争取实习</td><td>有实习就按工作日程压缩自学；没有实习则继续定向投递和项目迭代。</td></tr><tr><td>寒假末–2027春</td><td>结合排名、兴趣、项目表现确定主申 / 主考目标</td><td>北邮：数据结构与技术表达；中传：交互基础，核对当年要求后再决定图形学 / Unity；同济：研究问题、用户研究与项目案例。具体科目与材料按当年官方通知。</td></tr></tbody></table></div><p class="back"><a href="#phase1">← 回到学期安排</a></p></section><section class="phase" id="phase2" aria-labelledby="phase2-title"><h2 id="phase2-title" tabindex="-1">Phase 2 · 结构与原型｜10.19–11.15</h2><div class="notice">推进链表 / 栈队列 / 树；完成需求与原型；开始投递。 <strong>课表钟点未提供，所有固定课均按图片节次记录。</strong> 紫色块中的分钟是建议学习量，不是学校上下课时间。</div><div class="table-scroll"><table class="schedule"><caption>按上传课表节次安排 · 黄色为固定课，紫色为学习计划，留白用于休息和机动；原“选课”格已按空闲安排</caption><thead><tr><th class="time header" scope="col">节次</th><th scope="col">周一</th><th scope="col">周二</th><th scope="col">周三</th><th scope="col">周四</th><th scope="col">周五</th></tr></thead><tbody><tr><th scope="row" class="time">第1节</th><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-0" data-scope="weekly" data-task="0"/> C++ + DS · 栈队列 / 二叉树<br/><a href="#cppGuide">新知识 / 示例</a></label><br/><small>80分钟</small></td><td rowspan="4" class="card"><label><input type="checkbox" id="week-2-7" data-scope="weekly" data-task="7"/> Text-to-Datalog 科研深度工作<br/>前半：读论文 / 定义实验；后半：实现 / 记录</label><br/><small>160分钟；中间休息</small></td><td rowspan="3" class="fixed"><strong>随机过程</strong><br/>固定课 · 第1–3节<br/>1–17周</td><td class="free">留白 / 休息 / 机动</td><td rowspan="4" class="card"><label><input type="checkbox" id="week-2-8" data-scope="weekly" data-task="8"/> Text-to-Datalog 科研深度工作<br/>前半：跑实验 / 分析失败；后半：整理本周进展</label><br/><small>160分钟；中间休息</small></td></tr><tr><th scope="row" class="time">第2节</th><td rowspan="3" class="fixed"><strong>运筹学与优化方法</strong><br/>固定课 · 第2–4节<br/>1–17周</td></tr><tr><th scope="row" class="time">第3节</th><td rowspan="2" class="fixed"><strong>计量经济学</strong><br/>固定课 · 第3–4节<br/>1–17周</td></tr><tr><th scope="row" class="time">第4节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-2-11" data-scope="weekly" data-task="11"/> 随机过程课后回忆 / 休息</label><br/><small>15–20分钟；不再开新课</small></td></tr><tr><th scope="row" class="time">第5节</th><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-9" data-scope="weekly" data-task="9"/> 计量经济学作业 / 课堂例题重做</label><br/><small>60–80分钟；优先当周作业</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-10" data-scope="weekly" data-task="10"/> 随机过程预习 / 习题<br/><a href="#randomProcess">Random Process Guide</a></label><br/><small>80分钟；为周三课做准备</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-3" data-scope="weekly" data-task="3"/> HCI · 原型 / Human–AI<br/><a href="#hciGuide">课程 + 设计练习</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>贝叶斯统计</strong><br/>固定课 · 第5–6节<br/>1–17周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-2" data-scope="weekly" data-task="2"/> C++ + DS · 题目与错题复盘<br/><a href="#cppGuide">练习路线</a></label><br/><small>80分钟</small></td></tr><tr><th scope="row" class="time">第6节</th></tr><tr><th scope="row" class="time">第7节</th><td rowspan="2" class="fixed"><strong>高级英语 I</strong><br/>固定课 · 第7–8节<br/>1–16周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-1" data-scope="weekly" data-task="1"/> C++ + DS · C++实现 / 错题<br/><a href="#cppGuide">闭卷实现 / 调试</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>高级英语 I</strong><br/>固定课 · 第7–8节<br/>1–16周</td><td rowspan="3" class="fixed"><strong>数据库原理与实践</strong><br/>固定课 · 第7–9节<br/>1–17周</td><td rowspan="4" class="card"><label><input type="checkbox" id="week-2-5" data-scope="weekly" data-task="5"/> AI × HCI 共享项目 · 原型 / Human–AI<br/><a href="#hciGuide">实现 / 测试 / 迭代</a><br/>兼作实习项目证据</label><br/><small>120分钟；其余时间休息</small></td></tr><tr><th scope="row" class="time">第8节</th></tr><tr><th scope="row" class="time">第9节</th><td rowspan="3" class="fixed"><strong>自然语言处理</strong><br/>固定课 · 第9–11节<br/>1–17周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-6" data-scope="weekly" data-task="6"/> 实习准备 · SQL + 投递 / 项目<br/><a href="#internshipGuide">SQL / 简历 / 定向投递</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>多元统计分析</strong><br/>固定课 · 第9–10节<br/>1–17周</td></tr><tr><th scope="row" class="time">第10节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-2-13" data-scope="weekly" data-task="13"/> 数据库课后复盘 / SQL作业</label><br/><small>30分钟；与实习SQL共用错题</small></td></tr><tr><th scope="row" class="time">第11节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-2-16" data-scope="weekly" data-task="16"/> 运筹学预习 / 上周错题</label><br/><small>40分钟；以校内要求为主</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-12" data-scope="weekly" data-task="12"/> 多元统计课后复盘 / 习题</label><br/><small>60分钟；课后趁热整理</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-2-4" data-scope="weekly" data-task="4"/> HCI · 整理周五项目任务<br/><a href="#hciGuide">阶段目标</a></label><br/><small>40分钟</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-2-15" data-scope="weekly" data-task="15"/> 贝叶斯习题 / 巩固<br/><a href="#bayesianStats">教材对应 Guide</a></label><br/><small>60–80分钟；完成后结束学习</small></td></tr><tr><th scope="row" class="time">第12节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-2-18" data-scope="weekly" data-task="18"/> NLP课后回忆 / 休息</label><br/><small>15分钟；整理1个疑问</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-2-17" data-scope="weekly" data-task="17"/> 高级英语作业 / 精读</label><br/><small>30–40分钟；完成即休息</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-2-14" data-scope="weekly" data-task="14"/> 贝叶斯当日复盘<br/><a href="#bayesianStats">Bayesian Statistics Guide</a></label><br/><small>40分钟；概念 / 推导</small></td></tr><tr><th scope="row" class="time">第13节</th><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td rowspan="2" class="fixed"><strong>形势与政策 五</strong><br/>固定课 · 第13–14节<br/>第5–8周 · BB平台线上学习</td></tr><tr><th scope="row" class="time">第14节</th><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td></tr></tbody></table></div><h3>周末与负载规则</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">模块</th><th scope="col">建议安排</th><th scope="col">执行规则</th></tr></thead><tbody><tr><td>跨方向共计9小时20分 / 周</td><td>C++ 240分钟 + HCI 120分钟 + 实习80分钟 + 周五共享项目120分钟</td><td>利用原“选课”空闲格，增加一次C++练习；项目移到周五下午。学习量包含视频、做题与投递，不在课表外重复加码。</td></tr><tr><td>校内课与科研</td><td>周二 / 周五第1–4节各160分钟科研；随机 / 贝叶斯复习改在工作日</td><td>周二预习随机过程，周三课后回忆；周四复盘贝叶斯，周五做题。计量、运筹、英语、多元统计、NLP、数据库均有课后或作业块。</td></tr><tr><td>周末与晚间</td><td>周末最多一个2小时机动块，其余休息 / 运动 / 社交</td><td>核心任务已排入工作日。第13–14节原则上保留自由时间；周五第5–8周按图完成形势与政策。周末只补最重要的未完成任务，不追加整套网课。</td></tr><tr><td>降载触发</td><td>有期中 / 大作业 / 面试，先删项目拓展与新增视频</td><td>期末前两周：C++45分钟旧题 + 实习维护30分钟，其余自学暂停；时间归还课程复习。欠账顺延，不在下周翻倍。</td></tr><tr><td>校内复习方法</td><td>计量：课堂例题重做；随机 / 贝叶斯：当周教材+习题</td><td>NLP / 数据库作业优先服务项目，英语按课内要求，多元统计 / 运筹每周在作业机动中各复盘一次。不用网课替代到课。</td></tr></tbody></table></div><h3>后续路线 · 共用能力，按证据再分支</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">时间</th><th scope="col">共同任务</th><th scope="col">决策 / 验收</th></tr></thead><tbody><tr><td>本月</td><td>查清专业排名、推免比例、加分规则</td><td>3.78/4不能独立判断推免机会。保住校内课与科研，建立招生信息核验清单。</td></tr><tr><td>2027寒假</td><td>图 / 查找 / 排序补齐；完成AI×HCI案例；争取实习</td><td>有实习就按工作日程压缩自学；没有实习则继续定向投递和项目迭代。</td></tr><tr><td>寒假末–2027春</td><td>结合排名、兴趣、项目表现确定主申 / 主考目标</td><td>北邮：数据结构与技术表达；中传：交互基础，核对当年要求后再决定图形学 / Unity；同济：研究问题、用户研究与项目案例。具体科目与材料按当年官方通知。</td></tr></tbody></table></div><p class="back"><a href="#phase1">← 回到学期安排</a></p></section><section class="phase" id="phase3" aria-labelledby="phase3-title"><h2 id="phase3-title" tabindex="-1">Phase 3 · 评估与收尾｜11.16–期末</h2><div class="notice">按掌握度推进树 / 查找 / 排序；做用户测试；面试与期末收尾。 <strong>课表钟点未提供，所有固定课均按图片节次记录。</strong> 紫色块中的分钟是建议学习量，不是学校上下课时间。</div><div class="table-scroll"><table class="schedule"><caption>按上传课表节次安排 · 黄色为固定课，紫色为学习计划，留白用于休息和机动；原“选课”格已按空闲安排</caption><thead><tr><th class="time header" scope="col">节次</th><th scope="col">周一</th><th scope="col">周二</th><th scope="col">周三</th><th scope="col">周四</th><th scope="col">周五</th></tr></thead><tbody><tr><th scope="row" class="time">第1节</th><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-0" data-scope="weekly" data-task="0"/> C++ + DS · 查找 / 排序复盘<br/><a href="#cppGuide">新知识 / 示例</a></label><br/><small>80分钟</small></td><td rowspan="4" class="card"><label><input type="checkbox" id="week-3-7" data-scope="weekly" data-task="7"/> Text-to-Datalog 科研深度工作<br/>前半：读论文 / 定义实验；后半：实现 / 记录</label><br/><small>160分钟；中间休息</small></td><td rowspan="3" class="fixed"><strong>随机过程</strong><br/>固定课 · 第1–3节<br/>1–17周</td><td class="free">留白 / 休息 / 机动</td><td rowspan="4" class="card"><label><input type="checkbox" id="week-3-8" data-scope="weekly" data-task="8"/> Text-to-Datalog 科研深度工作<br/>前半：跑实验 / 分析失败；后半：整理本周进展</label><br/><small>160分钟；中间休息</small></td></tr><tr><th scope="row" class="time">第2节</th><td rowspan="3" class="fixed"><strong>运筹学与优化方法</strong><br/>固定课 · 第2–4节<br/>1–17周</td></tr><tr><th scope="row" class="time">第3节</th><td rowspan="2" class="fixed"><strong>计量经济学</strong><br/>固定课 · 第3–4节<br/>1–17周</td></tr><tr><th scope="row" class="time">第4节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-3-11" data-scope="weekly" data-task="11"/> 随机过程课后回忆 / 休息</label><br/><small>15–20分钟；不再开新课</small></td></tr><tr><th scope="row" class="time">第5节</th><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-9" data-scope="weekly" data-task="9"/> 计量经济学作业 / 课堂例题重做</label><br/><small>60–80分钟；优先当周作业</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-10" data-scope="weekly" data-task="10"/> 随机过程预习 / 习题<br/><a href="#randomProcess">Random Process Guide</a></label><br/><small>80分钟；为周三课做准备</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-3" data-scope="weekly" data-task="3"/> HCI · 测试 / 迭代<br/><a href="#hciGuide">课程 + 设计练习</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>贝叶斯统计</strong><br/>固定课 · 第5–6节<br/>1–17周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-2" data-scope="weekly" data-task="2"/> C++ + DS · 题目与错题复盘<br/><a href="#cppGuide">练习路线</a></label><br/><small>80分钟</small></td></tr><tr><th scope="row" class="time">第6节</th></tr><tr><th scope="row" class="time">第7节</th><td rowspan="2" class="fixed"><strong>高级英语 I</strong><br/>固定课 · 第7–8节<br/>1–16周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-1" data-scope="weekly" data-task="1"/> C++ + DS · 旧题复做 / 薄弱点<br/><a href="#cppGuide">闭卷实现 / 调试</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>高级英语 I</strong><br/>固定课 · 第7–8节<br/>1–16周</td><td rowspan="3" class="fixed"><strong>数据库原理与实践</strong><br/>固定课 · 第7–9节<br/>1–17周</td><td rowspan="4" class="card"><label><input type="checkbox" id="week-3-5" data-scope="weekly" data-task="5"/> AI × HCI 共享项目 · 测试 / 迭代<br/><a href="#hciGuide">实现 / 测试 / 迭代</a><br/>兼作实习项目证据</label><br/><small>120分钟；其余时间休息</small></td></tr><tr><th scope="row" class="time">第8节</th></tr><tr><th scope="row" class="time">第9节</th><td rowspan="3" class="fixed"><strong>自然语言处理</strong><br/>固定课 · 第9–11节<br/>1–17周</td><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-6" data-scope="weekly" data-task="6"/> 实习准备 · 面试 / ML复习<br/><a href="#internshipGuide">SQL / 简历 / 定向投递</a></label><br/><small>80分钟</small></td><td rowspan="2" class="fixed"><strong>多元统计分析</strong><br/>固定课 · 第9–10节<br/>1–17周</td></tr><tr><th scope="row" class="time">第10节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-3-13" data-scope="weekly" data-task="13"/> 数据库课后复盘 / SQL作业</label><br/><small>30分钟；与实习SQL共用错题</small></td></tr><tr><th scope="row" class="time">第11节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-3-16" data-scope="weekly" data-task="16"/> 运筹学预习 / 上周错题</label><br/><small>40分钟；以校内要求为主</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-12" data-scope="weekly" data-task="12"/> 多元统计课后复盘 / 习题</label><br/><small>60分钟；课后趁热整理</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-3-4" data-scope="weekly" data-task="4"/> HCI · 整理周五项目任务<br/><a href="#hciGuide">阶段目标</a></label><br/><small>40分钟</small></td><td rowspan="2" class="card"><label><input type="checkbox" id="week-3-15" data-scope="weekly" data-task="15"/> 贝叶斯习题 / 巩固<br/><a href="#bayesianStats">教材对应 Guide</a></label><br/><small>60–80分钟；完成后结束学习</small></td></tr><tr><th scope="row" class="time">第12节</th><td rowspan="1" class="card"><label><input type="checkbox" id="week-3-18" data-scope="weekly" data-task="18"/> NLP课后回忆 / 休息</label><br/><small>15分钟；整理1个疑问</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-3-17" data-scope="weekly" data-task="17"/> 高级英语作业 / 精读</label><br/><small>30–40分钟；完成即休息</small></td><td rowspan="1" class="card"><label><input type="checkbox" id="week-3-14" data-scope="weekly" data-task="14"/> 贝叶斯当日复盘<br/><a href="#bayesianStats">Bayesian Statistics Guide</a></label><br/><small>40分钟；概念 / 推导</small></td></tr><tr><th scope="row" class="time">第13节</th><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td rowspan="2" class="fixed"><strong>形势与政策 五</strong><br/>固定课 · 第13–14节<br/>第5–8周 · BB平台线上学习</td></tr><tr><th scope="row" class="time">第14节</th><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td><td class="free">留白 / 休息 / 机动</td></tr></tbody></table></div><h3>周末与负载规则</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">模块</th><th scope="col">建议安排</th><th scope="col">执行规则</th></tr></thead><tbody><tr><td>跨方向共计9小时20分 / 周</td><td>C++ 240分钟 + HCI 120分钟 + 实习80分钟 + 周五共享项目120分钟</td><td>利用原“选课”空闲格，增加一次C++练习；项目移到周五下午。学习量包含视频、做题与投递，不在课表外重复加码。</td></tr><tr><td>校内课与科研</td><td>周二 / 周五第1–4节各160分钟科研；随机 / 贝叶斯复习改在工作日</td><td>周二预习随机过程，周三课后回忆；周四复盘贝叶斯，周五做题。计量、运筹、英语、多元统计、NLP、数据库均有课后或作业块。</td></tr><tr><td>周末与晚间</td><td>周末最多一个2小时机动块，其余休息 / 运动 / 社交</td><td>核心任务已排入工作日。第13–14节原则上保留自由时间；周五第5–8周按图完成形势与政策。周末只补最重要的未完成任务，不追加整套网课。</td></tr><tr><td>降载触发</td><td>有期中 / 大作业 / 面试，先删项目拓展与新增视频</td><td>期末前两周：C++45分钟旧题 + 实习维护30分钟，其余自学暂停；时间归还课程复习。欠账顺延，不在下周翻倍。</td></tr><tr><td>校内复习方法</td><td>计量：课堂例题重做；随机 / 贝叶斯：当周教材+习题</td><td>NLP / 数据库作业优先服务项目，英语按课内要求，多元统计 / 运筹每周在作业机动中各复盘一次。不用网课替代到课。</td></tr></tbody></table></div><h3>后续路线 · 共用能力，按证据再分支</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">时间</th><th scope="col">共同任务</th><th scope="col">决策 / 验收</th></tr></thead><tbody><tr><td>本月</td><td>查清专业排名、推免比例、加分规则</td><td>3.78/4不能独立判断推免机会。保住校内课与科研，建立招生信息核验清单。</td></tr><tr><td>2027寒假</td><td>图 / 查找 / 排序补齐；完成AI×HCI案例；争取实习</td><td>有实习就按工作日程压缩自学；没有实习则继续定向投递和项目迭代。</td></tr><tr><td>寒假末–2027春</td><td>结合排名、兴趣、项目表现确定主申 / 主考目标</td><td>北邮：数据结构与技术表达；中传：交互基础，核对当年要求后再决定图形学 / Unity；同济：研究问题、用户研究与项目案例。具体科目与材料按当年官方通知。</td></tr></tbody></table></div><p class="back"><a href="#phase1">← 回到学期安排</a></p></section><div class="phase" id="randomProcess">
 <h2>Random Process Learning Guide</h2>
 <div class="notice">
 <strong>Resource policy:</strong>
@@ -238,7 +78,7 @@ When MIT does not have a strong match, the guide uses <strong>Textbook-first</st
 ② MIT 6.262 as the main stochastic-process course for Poisson, renewal, Markov and martingales;
 ③ MIT 18.642 for Brownian motion, stochastic integration and Black–Scholes.
 If the English in MIT 6.262 is difficult to follow, use
-<a href="https://search.bilibili.com/all?keyword=MIT%206.262%20%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%20%E4%B8%AD%E8%8B%B1%E5%AD%97%E5%B9%95" target="_blank">Bilibili search for MIT 6.262 bilingual / Chinese-subtitle mirrors</a>
+<a href="https://search.bilibili.com/all?keyword=MIT%206.262%20%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%20%E4%B8%AD%E8%8B%B1%E5%AD%97%E5%B9%95" target="_blank" rel="noopener noreferrer">Bilibili search for MIT 6.262 bilingual / Chinese-subtitle mirrors</a>
 as a language backup, while keeping MIT OCW as the primary stable source.
 </div>
 <div class="table-scroll">
@@ -255,41 +95,41 @@ as a language backup, while keeping MIT OCW as the primary stable source.
 <tr>
 <td>1.1</td>
 <td>概率空间</td>
-<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lectures 1–3</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank" rel="noopener noreferrer">MIT 6.041 — Lectures 1–3</a></td>
 <td>Probability models, axioms, conditioning, Bayes' rule and independence. Quick review is enough if these are already familiar.</td>
 </tr>
 <tr>
 <td>1.2</td>
 <td>随机变量与分布函数</td>
-<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lectures 5–10</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank" rel="noopener noreferrer">MIT 6.041 — Lectures 5–10</a></td>
 <td>Discrete and continuous random variables, PMF/PDF/CDF, joint distributions and derived distributions.</td>
 </tr>
 <tr>
 <td>1.3</td>
 <td>数字特征、矩母函数与特征函数</td>
-<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lectures 5, 7, 11–12</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank" rel="noopener noreferrer">MIT 6.041 — Lectures 5, 7, 11–12</a></td>
 <td>Use MIT for expectation, variance, covariance and conditional expectation. <strong>Textbook-first</strong> for MGF and characteristic functions because MIT 6.041 does not cover them in the same depth.</td>
 </tr>
 <tr>
 <td>1.4</td>
 <td>收敛性</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-3-law-of-large-numbers-convergence/" target="_blank">MIT 6.262 — Lecture 3</a><br/>
-<a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lecture 19</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-3-law-of-large-numbers-convergence/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 3</a><br/>
+<a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank" rel="noopener noreferrer">MIT 6.041 — Lecture 19</a>
 </td>
 <td>Start with 6.041 for convergence in probability and the weak law; use 6.262 for the stochastic-process viewpoint.</td>
 </tr>
 <tr>
 <td>1.5</td>
 <td>独立性与条件期望</td>
-<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank">MIT 6.041 — Lectures 3, 7, 12</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/video_galleries/video-lectures/" target="_blank" rel="noopener noreferrer">MIT 6.041 — Lectures 3, 7, 12</a></td>
 <td>Focus on independence and iterated conditional expectation. These ideas return later in Markov chains and martingales.</td>
 </tr>
 <tr>
 <td>2.1</td>
 <td>随机过程基本概念</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/video_galleries/video-lectures/" target="_blank">MIT 6.262 — Lectures 1–2</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/video_galleries/video-lectures/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lectures 1–2</a>
 </td>
 <td>Use Lecture 1 for the course-level stochastic-process viewpoint and Lecture 2 for the Bernoulli process as the first concrete process.</td>
 </tr>
@@ -302,14 +142,14 @@ as a language backup, while keeping MIT OCW as the primary stable source.
 <tr>
 <td>2.3</td>
 <td>随机过程的基本类型</td>
-<td><a href="https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-8-time-series-analysis-i/" target="_blank">MIT 18.S096 — Lecture 8</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-s096-topics-in-mathematics-with-applications-in-finance-fall-2013/resources/lecture-8-time-series-analysis-i/" target="_blank" rel="noopener noreferrer">MIT 18.S096 — Lecture 8</a></td>
 <td>Useful mainly for stationary processes and time-series intuition. Use the textbook for the full classification used in your course.</td>
 </tr>
 <tr>
 <td>3.1</td>
 <td>Poisson 过程</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-4-poisson-the-perfect-arrival-process/" target="_blank">MIT 6.262 — Lecture 4</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-4-poisson-the-perfect-arrival-process/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 4</a>
 </td>
 <td>Main Poisson-process lecture. Treat this as the primary resource rather than switching between multiple courses.</td>
 </tr>
@@ -317,7 +157,7 @@ as a language backup, while keeping MIT OCW as the primary stable source.
 <td>3.2</td>
 <td>与 Poisson 过程相关的若干分布</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-5-poisson-combining-and-splitting/" target="_blank">MIT 6.262 — Lecture 5</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-5-poisson-combining-and-splitting/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 5</a>
 </td>
 <td>Interarrival times, splitting, combining and conditioning. Pair the lecture with the textbook examples.</td>
 </tr>
@@ -325,49 +165,49 @@ as a language backup, while keeping MIT OCW as the primary stable source.
 <td>3.3</td>
 <td>Poisson 过程的推广</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-5-poisson-combining-and-splitting/" target="_blank">MIT 6.262 — Lecture 5</a><br/>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-6-from-poisson-to-markov/" target="_blank">MIT 6.262 — Lecture 6</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-5-poisson-combining-and-splitting/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 5</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-6-from-poisson-to-markov/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 6</a>
 </td>
 <td>Partial match. Use the textbook for extensions not explicitly treated in the MIT lectures.</td>
 </tr>
 <tr>
 <td>4.1</td>
 <td>更新过程的定义及若干分布</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-10-renewals-and-the-strong-law-of-large-numbers/" target="_blank">MIT 6.262 — Lecture 10</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-10-renewals-and-the-strong-law-of-large-numbers/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 10</a></td>
 <td>Very close to the textbook introduction to renewal processes.</td>
 </tr>
 <tr>
 <td>4.2</td>
 <td>更新方程及其应用</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-11-renewals-strong-law-and-rewards/" target="_blank">MIT 6.262 — Lecture 11</a><br/>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-12-renewal-rewards-stopping-trials-and-walds-inequality/" target="_blank">MIT 6.262 — Lecture 12</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-11-renewals-strong-law-and-rewards/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 11</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-12-renewal-rewards-stopping-trials-and-walds-inequality/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 12</a>
 </td>
 <td>Renewal rewards, stopping trials and Wald-type arguments. Use the textbook for the exact renewal-equation notation.</td>
 </tr>
 <tr>
 <td>4.3</td>
 <td>更新定理</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-15-the-last-renewal/" target="_blank">MIT 6.262 — Lecture 15</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-15-the-last-renewal/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 15</a></td>
 <td>Use this with the textbook for the elementary renewal theorem and limiting renewal results.</td>
 </tr>
 <tr>
 <td>4.4</td>
 <td>更新过程的推广</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-16-renewals-and-countable-state-markov/" target="_blank">MIT 6.262 — Lecture 16</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-16-renewals-and-countable-state-markov/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 16</a></td>
 <td>Useful for extensions and for the transition from renewal processes to countable-state Markov chains.</td>
 </tr>
 <tr>
 <td>5.1</td>
 <td>Markov 链基本概念</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-7-finite-state-markov-chains-the-matrix-approach/" target="_blank">MIT 6.262 — Lecture 7</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-7-finite-state-markov-chains-the-matrix-approach/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 7</a></td>
 <td>Transition matrices and the matrix approach. Use this as the main Markov-chain introduction.</td>
 </tr>
 <tr>
 <td>5.2</td>
 <td>状态的分类及性质</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-17-countable-state-markov-chains/" target="_blank">MIT 6.262 — Lecture 17</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-17-countable-state-markov-chains/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 17</a>
 </td>
 <td>Positive/null recurrence, steady state and related state properties. For finite-state terminology, review Lecture 7 if needed.</td>
 </tr>
@@ -375,36 +215,36 @@ as a language backup, while keeping MIT OCW as the primary stable source.
 <td>5.3</td>
 <td>极限定理及平稳分布</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-8-markov-eigenvalues-and-eigenvectors/" target="_blank">MIT 6.262 — Lecture 8</a><br/>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-17-countable-state-markov-chains/" target="_blank">MIT 6.262 — Lecture 17</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-8-markov-eigenvalues-and-eigenvectors/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 8</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-17-countable-state-markov-chains/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 17</a>
 </td>
 <td>Lecture 8 develops steady-state vectors for finite chains; Lecture 17 extends the discussion to countable-state chains.</td>
 </tr>
 <tr>
 <td>5.4</td>
 <td>Markov 链的应用</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-9-markov-rewards-and-dynamic-programming/" target="_blank">MIT 6.262 — Lecture 9</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-9-markov-rewards-and-dynamic-programming/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 9</a></td>
 <td>Expected first-passage time, rewards and dynamic programming. Good application-oriented lecture.</td>
 </tr>
 <tr>
 <td>5.5</td>
 <td>连续时间 Markov 链</td>
 <td>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-18-countable-state-markov-chains-and-processes/" target="_blank">MIT 6.262 — Lecture 18</a><br/>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-19-countable-state-markov-processes/" target="_blank">MIT 6.262 — Lecture 19</a>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-18-countable-state-markov-chains-and-processes/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 18</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-19-countable-state-markov-processes/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 19</a>
 </td>
 <td>Main material for countable-state continuous-time Markov processes.</td>
 </tr>
 <tr>
 <td>6.1</td>
 <td>鞅基本概念</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-23-martingales-plain-sub-and-super/" target="_blank">MIT 6.262 — Lecture 23</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-23-martingales-plain-sub-and-super/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 23</a></td>
 <td>Martingales, submartingales and supermartingales.</td>
 </tr>
 <tr>
 <td>6.2</td>
 <td>鞅的停时定理及其应用</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank">MIT 6.262 — Lecture 24</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 24</a></td>
 <td>Stopping times, optional-stopping ideas and convergence.</td>
 </tr>
 <tr>
@@ -416,61 +256,61 @@ as a language backup, while keeping MIT OCW as the primary stable source.
 <tr>
 <td>6.4</td>
 <td>鞅收敛定理</td>
-<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank">MIT 6.262 — Lecture 24</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-24-martingales-stopping-and-converging/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 24</a></td>
 <td>Use this as the main video and follow the theorem statements in the textbook.</td>
 </tr>
 <tr>
 <td>6.5</td>
 <td>连续鞅</td>
 <td>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a><br/>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 24</a><br/>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 25</a>
 </td>
 <td>Use these as a bridge from discrete-time martingales to continuous-time stochastic calculus.</td>
 </tr>
 <tr>
 <td>7.1</td>
 <td>Brown 运动基本概念与性质</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 14</a></td>
 <td>Main Brownian-motion lecture. This becomes the core resource for most of Chapter 7.</td>
 </tr>
 <tr>
 <td>7.2</td>
 <td>Gauss 过程</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 14</a></td>
 <td>Brownian motion is treated as the central Gaussian-process example. <strong>Textbook-first</strong> for general Gaussian processes.</td>
 </tr>
 <tr>
 <td>7.3</td>
 <td>Brown 运动的鞅性质</td>
 <td>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a><br/>
-<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-23-martingales-plain-sub-and-super/" target="_blank">MIT 6.262 — Lecture 23</a>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 14</a><br/>
+<a href="https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/resources/lecture-23-martingales-plain-sub-and-super/" target="_blank" rel="noopener noreferrer">MIT 6.262 — Lecture 23</a>
 </td>
 <td>Combine Brownian-motion properties with the martingale framework from 6.262.</td>
 </tr>
 <tr>
 <td>7.4</td>
 <td>Brown 运动的 Markov 性</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 14</a></td>
 <td>Includes the Markov property of Brownian motion.</td>
 </tr>
 <tr>
 <td>7.5</td>
 <td>最大值变量及反正弦律</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 14</a></td>
 <td>Reflection principle and Brownian maximum are useful matches. <strong>Textbook-first</strong> for the arcsine law.</td>
 </tr>
 <tr>
 <td>7.6</td>
 <td>Brown 运动的几种变化</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 14</a></td>
 <td>Brownian motion with drift, Brownian bridge and related variants.</td>
 </tr>
 <tr>
 <td>7.7</td>
 <td>高维 Brown 运动</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 14</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-14-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 14</a></td>
 <td>Includes higher-dimensional Brownian-motion discussion; use the textbook for the full formal development.</td>
 </tr>
 <tr>
@@ -478,43 +318,43 @@ as a language backup, while keeping MIT OCW as the primary stable source.
 <td>关于随机游动的积分</td>
 <td>
 <strong>Textbook-first</strong><br/>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 24</a>
 </td>
 <td>Use the textbook for the discrete motivation, then MIT for the continuous stochastic-calculus transition.</td>
 </tr>
 <tr>
 <td>8.2</td>
 <td>关于 Brown 运动的积分</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24: Stochastic Calculus</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 24: Stochastic Calculus</a></td>
 <td>Directly relevant to stochastic integration with Brownian motion.</td>
 </tr>
 <tr>
 <td>8.3</td>
 <td>Itô 积分过程</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 24</a></td>
 <td>Itô integral and its basic properties.</td>
 </tr>
 <tr>
 <td>8.4</td>
 <td>Itô 公式</td>
 <td>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 24</a><br/>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-24-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 24</a><br/>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 25</a>
 </td>
 <td>Lecture 24 introduces Itô's formula; Lecture 25 develops applications and stochastic differential equations.</td>
 </tr>
 <tr>
 <td>9.1</td>
 <td>金融市场术语与基本假定</td>
-<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/lecture-videos/" target="_blank">MIT 18.642 — Finance lecture sequence</a></td>
+<td><a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/lecture-videos/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Finance lecture sequence</a></td>
 <td>Only watch the financial-background material needed for your textbook. Do not treat the whole finance course as required.</td>
 </tr>
 <tr>
 <td>9.2</td>
 <td>Black–Scholes 模型</td>
 <td>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-21-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 21: Black–Scholes</a><br/>
-<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank">MIT 18.642 — Lecture 25</a>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-21-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 21: Black–Scholes</a><br/>
+<a href="https://ocw.mit.edu/courses/18-642-topics-in-mathematics-with-applications-in-finance-fall-2024/resources/18642-lecture-25-version-2_mp4/" target="_blank" rel="noopener noreferrer">MIT 18.642 — Lecture 25</a>
 </td>
 <td>Lecture 21 is the main Black–Scholes resource; Lecture 25 connects the model to stochastic calculus.</td>
 </tr>
@@ -533,34 +373,34 @@ as a language backup, while keeping MIT OCW as the primary stable source.
 <tr>
 <td>11.1</td>
 <td>计算积分的 Monte Carlo 方法</td>
-<td><a href="https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/mit6_0002f16_lec6/" target="_blank">MIT 6.0002 — Lecture 6: Monte Carlo Simulation</a></td>
+<td><a href="https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/mit6_0002f16_lec6/" target="_blank" rel="noopener noreferrer">MIT 6.0002 — Lecture 6: Monte Carlo Simulation</a></td>
 <td>Good intuitive introduction before reading the textbook derivations.</td>
 </tr>
 <tr>
 <td>11.2</td>
 <td>Markov Chain Monte Carlo 方法简介</td>
 <td>
-<a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/pages/lecture-notes/" target="_blank">MIT 14.384 — Lectures 25–26: MCMC</a>
+<a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/pages/lecture-notes/" target="_blank" rel="noopener noreferrer">MIT 14.384 — Lectures 25–26: MCMC</a>
 </td>
 <td><strong>Textbook-first for the overall MCMC framework.</strong> MIT Lecture 25 covers Metropolis–Hastings and Lecture 26 covers Gibbs sampling.</td>
 </tr>
 <tr>
 <td>11.3</td>
 <td>Metropolis–Hastings 算法</td>
-<td><a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/resources/mit14_384f13_lec25/" target="_blank">MIT 14.384 — Lecture 25: Metropolis–Hastings</a></td>
+<td><a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/resources/mit14_384f13_lec25/" target="_blank" rel="noopener noreferrer">MIT 14.384 — Lecture 25: Metropolis–Hastings</a></td>
 <td>Focus on proposal distributions, acceptance probability and invariant target distributions. The notes are more theoretical than the earlier videos.</td>
 </tr>
 <tr>
 <td>11.4</td>
 <td>Gibbs 抽样</td>
-<td><a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/resources/mit14_384f13_lec26/" target="_blank">MIT 14.384 — Lecture 26: Gibbs Sampling</a></td>
+<td><a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/resources/mit14_384f13_lec26/" target="_blank" rel="noopener noreferrer">MIT 14.384 — Lecture 26: Gibbs Sampling</a></td>
 <td>Use the notes for conditional distributions and the Gibbs update mechanism; then work the textbook example.</td>
 </tr>
 <tr>
 <td>11.5</td>
 <td>贝叶斯 MCMC 估计方法</td>
 <td>
-<a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/pages/lecture-notes/" target="_blank">MIT 14.384 — Bayesian + MCMC notes</a>
+<a href="https://ocw.mit.edu/courses/14-384-time-series-analysis-fall-2013/pages/lecture-notes/" target="_blank" rel="noopener noreferrer">MIT 14.384 — Bayesian + MCMC notes</a>
 </td>
 <td>Use the textbook for the exact Bayesian estimation formulation. MIT provides the computational MCMC machinery and examples.</td>
 </tr>
@@ -599,140 +439,140 @@ The goal is to avoid switching between many websites while still following
 </thead>
 <tbody>
 <tr><td>1.1</td><td>引言</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=1" target="_blank">Ben Lambert 双语 — P1 Course syllabus</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=1" target="_blank">西交大梅长林 — P1 绪论</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=1" target="_blank" rel="noopener noreferrer">Ben Lambert 双语 — P1 Course syllabus</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=1" target="_blank" rel="noopener noreferrer">西交大梅长林 — P1 绪论</a>
 </td><td>先看中文绪论建立课程框架，再用 Lambert P1 看英文课程结构。此节不需要深挖计算。</td></tr>
 <tr><td>1.2</td><td>概率空间与随机事件贝叶斯公式</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=12" target="_blank">Ben Lambert 双语 — P12 Bayes' rule example 1</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=13" target="_blank">Ben Lambert 双语 — P13 Bayes' rule example 2</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=12" target="_blank" rel="noopener noreferrer">Ben Lambert 双语 — P12 Bayes' rule example 1</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=13" target="_blank" rel="noopener noreferrer">Ben Lambert 双语 — P13 Bayes' rule example 2</a>
 </td><td>直接对应 Bayes rule。重点是条件概率方向、prior、evidence 和 posterior 的关系。</td></tr>
 <tr><td>1.3</td><td>三种信息与先验分布</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=35" target="_blank">西交大梅长林 — P35 主观概率</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=36" target="_blank">西交大梅长林 — P36 利用先验分布信息确定先验分布</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=35" target="_blank" rel="noopener noreferrer">西交大梅长林 — P35 主观概率</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=36" target="_blank" rel="noopener noreferrer">西交大梅长林 — P36 利用先验分布信息确定先验分布</a>
 </td><td>这一节教材术语较有自己的组织方式。以教材为主，用这两讲理解“先验信息”从哪里来。</td></tr>
 <tr><td>1.4</td><td>一般形式的贝叶斯公式与后验分布</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=2" target="_blank">西交大梅长林 — P2 后验分布的计算</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=23" target="_blank">Ben Lambert 双语 — P23 Bayesian inference intuition</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=2" target="_blank" rel="noopener noreferrer">西交大梅长林 — P2 后验分布的计算</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=23" target="_blank" rel="noopener noreferrer">Ben Lambert 双语 — P23 Bayesian inference intuition</a>
 </td><td>先用中文课把后验计算做扎实，再看 Lambert 补直觉。</td></tr>
 <tr><td>2.1</td><td>共轭先验分布</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=3" target="_blank">西交大梅长林 — P3 共轭先验分布（一）</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=4" target="_blank">P4 共轭先验分布（二）</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=5" target="_blank">P5 共轭先验分布（三）</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=30" target="_blank">Ben Lambert 双语 — P30 What is a conjugate prior?</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=3" target="_blank" rel="noopener noreferrer">西交大梅长林 — P3 共轭先验分布（一）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=4" target="_blank" rel="noopener noreferrer">P4 共轭先验分布（二）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=5" target="_blank" rel="noopener noreferrer">P5 共轭先验分布（三）</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=30" target="_blank" rel="noopener noreferrer">Ben Lambert 双语 — P30 What is a conjugate prior?</a>
 </td><td>这是重点。中文课负责推导，Lambert 用来检查概念是否真正理解。</td></tr>
 <tr><td>2.2</td><td>多参数先验与后验分布</td><td>
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=14" target="_blank">Vassar MATH 347 — P14 Mean &amp; SD posterior I</a><br/>
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=15" target="_blank">P15 Mean &amp; SD posterior II</a><br/>
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=16" target="_blank">P16 Mean &amp; SD posterior III</a>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=14" target="_blank" rel="noopener noreferrer">Vassar MATH 347 — P14 Mean &amp; SD posterior I</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=15" target="_blank" rel="noopener noreferrer">P15 Mean &amp; SD posterior II</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=16" target="_blank" rel="noopener noreferrer">P16 Mean &amp; SD posterior III</a>
 </td><td>这一组三讲直接处理均值和标准差的联合后验。英文原课但在 Bilibili，可配合平台字幕使用。</td></tr>
 <tr><td>2.3</td><td>充分统计量与应用</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=45" target="_blank">Ben Lambert 双语 — P45 Introduction to sufficient statistic</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=45" target="_blank" rel="noopener noreferrer">Ben Lambert 双语 — P45 Introduction to sufficient statistic</a>
 </td><td>先理解 sufficient statistic 的作用，再回教材做其贝叶斯应用。视频偏概念，公式以教材为准。</td></tr>
 <tr><td>3.1</td><td>先验分布类型已知时超参数估计</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=6" target="_blank">西交大梅长林 — P6 超参数及其确定</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=6" target="_blank" rel="noopener noreferrer">西交大梅长林 — P6 超参数及其确定</a>
 </td><td>几乎直接对应教材小节，优先看这一讲。</td></tr>
 <tr><td>3.2</td><td>由边际分布确定先验分布</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=37" target="_blank">西交大梅长林 — P37 利用边缘分布 m(x) 确定先验分布（一）</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=38" target="_blank">P38（二）</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=39" target="_blank">P39（三）</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=40" target="_blank">P40（四）</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=37" target="_blank" rel="noopener noreferrer">西交大梅长林 — P37 利用边缘分布 m(x) 确定先验分布（一）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=38" target="_blank" rel="noopener noreferrer">P38（二）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=39" target="_blank" rel="noopener noreferrer">P39（三）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=40" target="_blank" rel="noopener noreferrer">P40（四）</a>
 </td><td>这是目前找到的最贴教材资源之一。按顺序完整看即可。</td></tr>
 <tr><td>3.3</td><td>用主观概率作为先验概率</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=35" target="_blank">西交大梅长林 — P35 主观概率</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=36" target="_blank">P36 利用先验分布信息确定先验分布</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=35" target="_blank" rel="noopener noreferrer">西交大梅长林 — P35 主观概率</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=36" target="_blank" rel="noopener noreferrer">P36 利用先验分布信息确定先验分布</a>
 </td><td>先看 P35 理解主观概率，再看 P36 学如何把信息转成先验分布。</td></tr>
 <tr><td>3.4</td><td>无信息先验分布</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=41" target="_blank">西交大梅长林 — P41 无信息先验分布（一）</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=42" target="_blank">P42（二）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=43" target="_blank">P43（三）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=44" target="_blank">P44（四）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=45" target="_blank">P45（五）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=46" target="_blank">P46（六）</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=41" target="_blank">Lambert 双语 — P41 Jeffreys prior I</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=41" target="_blank" rel="noopener noreferrer">西交大梅长林 — P41 无信息先验分布（一）</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=42" target="_blank" rel="noopener noreferrer">P42（二）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=43" target="_blank" rel="noopener noreferrer">P43（三）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=44" target="_blank" rel="noopener noreferrer">P44（四）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=45" target="_blank" rel="noopener noreferrer">P45（五）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=46" target="_blank" rel="noopener noreferrer">P46（六）</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=41" target="_blank" rel="noopener noreferrer">Lambert 双语 — P41 Jeffreys prior I</a>
 </td><td>中文六讲作为主线。Jeffreys prior 不清楚时再看 Lambert P41–43。</td></tr>
 <tr><td>4.1</td><td>贝叶斯估计</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=8" target="_blank">西交大梅长林 — P8 参数的贝叶斯点估计（一）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=9" target="_blank">P9（二）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=10" target="_blank">P10（三）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=11" target="_blank">P11（四）</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=22" target="_blank">Lambert 双语 — P22 credible vs confidence intervals</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=8" target="_blank" rel="noopener noreferrer">西交大梅长林 — P8 参数的贝叶斯点估计（一）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=9" target="_blank" rel="noopener noreferrer">P9（二）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=10" target="_blank" rel="noopener noreferrer">P10（三）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=11" target="_blank" rel="noopener noreferrer">P11（四）</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=22" target="_blank" rel="noopener noreferrer">Lambert 双语 — P22 credible vs confidence intervals</a>
 </td><td>点估计看 P8–11。若课程进入区间估计，再接西交大 P12–17；Lambert P22 用来理解可信区间。</td></tr>
 <tr><td>4.2</td><td>泊松分布参数的估计</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=27" target="_blank">Ben Lambert 双语 — P27 Poisson distribution I</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=28" target="_blank">P28 Poisson distribution II</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=29" target="_blank">P29 Gamma distribution</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=27" target="_blank" rel="noopener noreferrer">Ben Lambert 双语 — P27 Poisson distribution I</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=28" target="_blank" rel="noopener noreferrer">P28 Poisson distribution II</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=29" target="_blank" rel="noopener noreferrer">P29 Gamma distribution</a>
 </td><td>把 Poisson likelihood 和 Gamma prior 连起来。之后直接做教材对应例题。</td></tr>
 <tr><td>4.3</td><td>指数分布参数的估计</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=17" target="_blank">Ben Lambert 双语 — P17 Waiting-time likelihood model</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=29" target="_blank">P29 Gamma distribution</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=17" target="_blank" rel="noopener noreferrer">Ben Lambert 双语 — P17 Waiting-time likelihood model</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=29" target="_blank" rel="noopener noreferrer">P29 Gamma distribution</a>
 </td><td>这里没有完全按教材排布的视频。用 waiting-time likelihood + Gamma distribution 理解结构，具体后验推导以教材为主。</td></tr>
 <tr><td>4.4</td><td>正态分布参数的估计</td><td>
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=13" target="_blank">Vassar MATH 347 — P13 Bayesian inference for a mean</a><br/>
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=14" target="_blank">P14 Prior/posterior for mean &amp; SD I</a> ·
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=15" target="_blank">P15 II</a> ·
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=16" target="_blank">P16 III</a>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=13" target="_blank" rel="noopener noreferrer">Vassar MATH 347 — P13 Bayesian inference for a mean</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=14" target="_blank" rel="noopener noreferrer">P14 Prior/posterior for mean &amp; SD I</a> ·
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=15" target="_blank" rel="noopener noreferrer">P15 II</a> ·
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=16" target="_blank" rel="noopener noreferrer">P16 III</a>
 </td><td>这一组与“正态总体均值和方差的贝叶斯推断”匹配度很高。</td></tr>
 <tr><td>4.5</td><td>贝叶斯假设检验</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=18" target="_blank">西交大梅长林 — P18 经典假设检验与贝叶斯假设检验</a><br/>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=19" target="_blank">P19 贝叶斯因子（一）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=20" target="_blank">P20 贝叶斯因子（二）</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=18" target="_blank" rel="noopener noreferrer">西交大梅长林 — P18 经典假设检验与贝叶斯假设检验</a><br/>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=19" target="_blank" rel="noopener noreferrer">P19 贝叶斯因子（一）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=20" target="_blank" rel="noopener noreferrer">P20 贝叶斯因子（二）</a>
 </td><td>先看 P18 建立框架，再看 Bayes factor。若教材要求复杂假设，可继续西交大 P21–28。</td></tr>
 <tr><td>4.6</td><td>模型的比较与选择</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=31" target="_blank">Lambert 双语 — P31 Posterior predictive check</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=36" target="_blank">P36 AIC / DIC / WAIC / LOO-CV</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=37" target="_blank">P37 Bayes factors &amp; marginal likelihoods</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=31" target="_blank" rel="noopener noreferrer">Lambert 双语 — P31 Posterior predictive check</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=36" target="_blank" rel="noopener noreferrer">P36 AIC / DIC / WAIC / LOO-CV</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=37" target="_blank" rel="noopener noreferrer">P37 Bayes factors &amp; marginal likelihoods</a>
 </td><td>模型比较先掌握 posterior predictive check 和 Bayes factor。AIC/WAIC/LOO 属于扩展内容，按老师要求取舍。</td></tr>
 <tr><td>4.7</td><td>贝叶斯统计预测</td><td>
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=29" target="_blank">西交大梅长林 — P29 预测（一）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=30" target="_blank">P30（二）</a> ·
-<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=31" target="_blank">P31（三）</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=24" target="_blank">Lambert 双语 — P24 Posterior predictive distribution</a>
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=29" target="_blank" rel="noopener noreferrer">西交大梅长林 — P29 预测（一）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=30" target="_blank" rel="noopener noreferrer">P30（二）</a> ·
+<a href="https://www.bilibili.com/video/BV1Pt411G7my/?p=31" target="_blank" rel="noopener noreferrer">P31（三）</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=24" target="_blank" rel="noopener noreferrer">Lambert 双语 — P24 Posterior predictive distribution</a>
 </td><td>中文三讲作为主线，Lambert P24 用于理解 posterior predictive 的直觉。</td></tr>
 <tr><td>5.1</td><td>决策基本概念</td><td>
-<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=4" target="_blank">中文贝叶斯统计 — P4 决策三要素</a>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=4" target="_blank" rel="noopener noreferrer">中文贝叶斯统计 — P4 决策三要素</a>
 </td><td>直接对应统计决策的基本构成。看完后用教材统一符号。</td></tr>
 <tr><td>5.2</td><td>损失函数</td><td>
-<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=14" target="_blank">中文贝叶斯统计 — P14 常用的损失函数</a>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=14" target="_blank" rel="noopener noreferrer">中文贝叶斯统计 — P14 常用的损失函数</a>
 </td><td>重点看不同 loss function 如何改变最优决策，而不是只记公式。</td></tr>
 <tr><td>5.3</td><td>贝叶斯决策</td><td>
-<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=19" target="_blank">中文贝叶斯统计 — P19 贝叶斯决策</a>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=19" target="_blank" rel="noopener noreferrer">中文贝叶斯统计 — P19 贝叶斯决策</a>
 </td><td>这一讲作为主线。之后回教材推一次后验期望损失最小化。</td></tr>
 <tr><td>5.4</td><td>抽样的价值</td><td>
-<a href="https://www.bilibili.com/video/BV1HcPqekE4s/?p=31" target="_blank">MIT IDS.333 中英字幕 — P31 Expected Value of Sample Information</a>
+<a href="https://www.bilibili.com/video/BV1HcPqekE4s/?p=31" target="_blank" rel="noopener noreferrer">MIT IDS.333 中英字幕 — P31 Expected Value of Sample Information</a>
 </td><td>这是本节最贴近的公开视频。视频是 MIT 课程并有中文翻译，理解 EVSI 后再对应教材公式。</td></tr>
 <tr><td>6.1</td><td>什么是 MCMC 方法</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=48" target="_blank">Lambert 双语 — P48 Why Bayesian computation becomes difficult</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=51" target="_blank">P51 Independent sampling</a> ·
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=52" target="_blank">P52 Integration by sampling</a> ·
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=58" target="_blank">P58 Why dependent sampling?</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=48" target="_blank" rel="noopener noreferrer">Lambert 双语 — P48 Why Bayesian computation becomes difficult</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=51" target="_blank" rel="noopener noreferrer">P51 Independent sampling</a> ·
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=52" target="_blank" rel="noopener noreferrer">P52 Integration by sampling</a> ·
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=58" target="_blank" rel="noopener noreferrer">P58 Why dependent sampling?</a>
 </td><td>不要直接背 MCMC 算法。先弄清楚为什么后验积分难算，以及为什么需要 sampling。</td></tr>
 <tr><td>6.2</td><td>吉布斯抽样</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=67" target="_blank">Lambert 双语 — P67 Introduction to Gibbs sampling</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=68" target="_blank">P68 Deriving a Gibbs sampling routine</a><br/>
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=20" target="_blank">Vassar — P20 Gibbs sampler example &amp; derivation</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=67" target="_blank" rel="noopener noreferrer">Lambert 双语 — P67 Introduction to Gibbs sampling</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=68" target="_blank" rel="noopener noreferrer">P68 Deriving a Gibbs sampling routine</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=20" target="_blank" rel="noopener noreferrer">Vassar — P20 Gibbs sampler example &amp; derivation</a>
 </td><td>Lambert 负责算法直觉，Vassar 用一个完整例子把 full conditional 和抽样过程串起来。</td></tr>
 <tr><td>6.3</td><td>Metropolis-Hastings 算法</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=61" target="_blank">Lambert 双语 — P61 Random Walk Metropolis</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=63" target="_blank">P63 Metropolis-Hastings</a><br/>
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=30" target="_blank">Vassar — P30 Metropolis and Metropolis-Hastings</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=61" target="_blank" rel="noopener noreferrer">Lambert 双语 — P61 Random Walk Metropolis</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=63" target="_blank" rel="noopener noreferrer">P63 Metropolis-Hastings</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=30" target="_blank" rel="noopener noreferrer">Vassar — P30 Metropolis and Metropolis-Hastings</a>
 </td><td>先看 Lambert P61、P63。若 acceptance ratio 推导仍不清楚，再看 Vassar P30。</td></tr>
 <tr><td>6.4</td><td>MCMC 的收敛性问题</td><td>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=65" target="_blank">Lambert 双语 — P65 Multiple chains &amp; convergence</a><br/>
-<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=66" target="_blank">P66 Overdispersed chains</a><br/>
-<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=22" target="_blank">Vassar — P22 MCMC diagnostics</a><br/>
-<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=54" target="_blank">中文补充 — P54 MCMC 收敛性判断</a>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=65" target="_blank" rel="noopener noreferrer">Lambert 双语 — P65 Multiple chains &amp; convergence</a><br/>
+<a href="https://www.bilibili.com/video/BV1iV411v7Yw/?p=66" target="_blank" rel="noopener noreferrer">P66 Overdispersed chains</a><br/>
+<a href="https://www.bilibili.com/video/BV1XjmaYMEMR/?p=22" target="_blank" rel="noopener noreferrer">Vassar — P22 MCMC diagnostics</a><br/>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=54" target="_blank" rel="noopener noreferrer">中文补充 — P54 MCMC 收敛性判断</a>
 </td><td>重点掌握 trace、multiple chains 和 diagnostics 的含义。中文 P54 可作为考前复习。</td></tr>
 <tr><td>7.1</td><td>风险函数</td><td>
-<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=37" target="_blank">中文贝叶斯统计 — P37 风险函数</a>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=37" target="_blank" rel="noopener noreferrer">中文贝叶斯统计 — P37 风险函数</a>
 </td><td>直接对应 risk function。注意区分 loss 与 risk。</td></tr>
 <tr><td>7.2</td><td>决策函数的容许性与最小最大准则</td><td>
-<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=2" target="_blank">贝叶斯估计理论性质 — P2 最小最大性</a><br/>
-<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=3" target="_blank">P3 用 Bayes 方法构造最小最大估计</a><br/>
-<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=4" target="_blank">P4 容许性</a>
+<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=2" target="_blank" rel="noopener noreferrer">贝叶斯估计理论性质 — P2 最小最大性</a><br/>
+<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=3" target="_blank" rel="noopener noreferrer">P3 用 Bayes 方法构造最小最大估计</a><br/>
+<a href="https://www.bilibili.com/video/BV1iP411M7bN/?p=4" target="_blank" rel="noopener noreferrer">P4 容许性</a>
 </td><td>这是非常贴教材的小专题。三段都看，尤其区分 minimax 与 admissibility。</td></tr>
 <tr><td>7.3</td><td>贝叶斯风险准则与贝叶斯解</td><td>
-<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=41" target="_blank">中文贝叶斯统计 — P41 贝叶斯风险</a><br/>
-<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=19" target="_blank">P19 贝叶斯决策</a>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=41" target="_blank" rel="noopener noreferrer">中文贝叶斯统计 — P41 贝叶斯风险</a><br/>
+<a href="https://www.bilibili.com/video/BV1hE411N7q2/?p=19" target="_blank" rel="noopener noreferrer">P19 贝叶斯决策</a>
 </td><td>把 Bayes risk 与第 5 章决策内容联系起来。最后按教材定义整理 Bayes rule / Bayes solution。</td></tr>
 </tbody>
 </table>
@@ -744,4 +584,33 @@ The goal is to avoid switching between many websites while still following
 教材中的 R 代码仍以本书示例和课堂要求为准，视频主要负责概念、推导和算法理解。
 </div>
 </div>
-</body></html>
+<section class="phase" id="cppGuide" aria-labelledby="cppGuide-title"><h2 id="cppGuide-title" tabindex="-1">C++ + Data Structures Learning Guide</h2><div class="notice">目标：把 C++ 学成数据结构的工具。<strong>每周4小时</strong>：周一第1–2节学新内容、周二第7–8节独立实现、周五第5–6节做题与复盘，每次80分钟。S1 从 2026-09-28 所在周开始；学校考试周自动顺延。</div><h3>How to Use · 每次 80 分钟</h3><p>10分钟闭卷回忆 → 20分钟视频或读书 → 40分钟独立实现 / 手算 → 10分钟记录错误。卡住20分钟后只看提示，关掉答案重写；在第2天与第7天复做。不以刷完视频或累计题数作为达标。</p><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">阶段</th><th scope="col">学习内容</th><th scope="col">课程 / 视频 / 教材链接</th><th scope="col">How to Use</th><th scope="col">阶段目标 / 代码练习</th></tr></thead><tbody><tr><td>S1 · 第1–2周</td><td>语法、函数、数组 / string / vector</td><td><a href="https://www.bilibili.com/video/BV1dL411y797/" target="_blank" rel="noopener noreferrer">Bilibili · Cherno C++（中英字幕）</a><br/><a href="https://www.learncpp.com/" target="_blank" rel="noopener noreferrer">LearnCpp 免费教材</a></td><td>按标题选看变量、函数、条件、循环、数组、字符串、动态数组；先用已有 Python 题改写 C++。跳过引擎、线程和大型工程。</td><td>写 6 个小程序：求和、最大值、计数、字符串反转、去重、排序；输入空数组 / 单元素也能处理。</td></tr><tr><td>S2 · 第3–4周</td><td>指针、引用、struct / class、对象生命期</td><td><a href="https://www.bilibili.com/video/BV1dL411y797/" target="_blank" rel="noopener noreferrer">Bilibili · Cherno C++（中英字幕）</a><br/><a href="https://www.hello-algo.com/" target="_blank" rel="noopener noreferrer">Hello 算法（切换 C++ 代码）</a></td><td>画地址与对象图，解释 Node* next。用调试器单步走插入与删除；知道 new/delete 配对，优先用 vector 管理一般数组。</td><td>实现单链表插入、查找、删除；<a href="https://leetcode.cn/problems/reverse-linked-list/" target="_blank" rel="noopener noreferrer">206 反转链表</a>；用空链表和单节点验收。</td></tr><tr><td>S3 · 第5–6周</td><td>复杂度、线性表、栈 / 队列、递归</td><td><a href="https://www.hello-algo.com/" target="_blank" rel="noopener noreferrer">Hello 算法（切换 C++ 代码）</a><br/><a href="https://www.learncpp.com/" target="_blank" rel="noopener noreferrer">LearnCpp 免费教材</a></td><td>每章先用纸画结构，再写 C++，最后做书面题。查 STL 容器接口即可，不开新的完整 C++ 课程。</td><td>实现栈、循环队列，说明满 / 空条件；<a href="https://leetcode.cn/problems/valid-parentheses/" target="_blank" rel="noopener noreferrer">20 有效的括号</a>、<a href="https://leetcode.cn/problems/implement-queue-using-stacks/" target="_blank" rel="noopener noreferrer">232 用栈实现队列</a>。</td></tr><tr><td>S4 · 第7–8周</td><td>二叉树、BST、遍历</td><td><a href="https://www.bilibili.com/video/BV1YuCGYqEDb/" target="_blank" rel="noopener noreferrer">Bilibili · MIT 6.006 2020（中英字幕版）</a><br/><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/" target="_blank" rel="noopener noreferrer">MIT 6.006 官方讲义与习题</a><br/><a href="https://www.hello-algo.com/" target="_blank" rel="noopener noreferrer">Hello 算法（切换 C++ 代码）</a></td><td>MIT 按标题看 Binary Trees；先画递归调用栈，分别写前 / 中 / 后序与层序。王道或校内题按知识点做。</td><td>手写 BST 搜索 / 插入；<a href="https://leetcode.cn/problems/binary-tree-inorder-traversal/" target="_blank" rel="noopener noreferrer">94 中序遍历</a>、<a href="https://leetcode.cn/problems/maximum-depth-of-binary-tree/" target="_blank" rel="noopener noreferrer">104 最大深度</a>、<a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener noreferrer">102 层序遍历</a>。</td></tr><tr><td>S5 · 第9–10周</td><td>堆、查找、哈希</td><td><a href="https://www.bilibili.com/video/BV1YuCGYqEDb/" target="_blank" rel="noopener noreferrer">Bilibili · MIT 6.006 2020（中英字幕版）</a><br/><a href="https://www.hello-algo.com/" target="_blank" rel="noopener noreferrer">Hello 算法（切换 C++ 代码）</a></td><td>选 Binary Heaps、Hashing；先写不变量和复杂度，再用 std::priority_queue / unordered_map 对照实现。</td><td>实现二分查找、heapify；<a href="https://leetcode.cn/problems/binary-search/" target="_blank" rel="noopener noreferrer">704 二分查找</a>、<a href="https://leetcode.cn/problems/two-sum/" target="_blank" rel="noopener noreferrer">1 两数之和</a>。</td></tr><tr><td>S6 · 第11周至期末前</td><td>排序与综合回顾</td><td><a href="https://www.hello-algo.com/" target="_blank" rel="noopener noreferrer">Hello 算法（切换 C++ 代码）</a><br/><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/" target="_blank" rel="noopener noreferrer">MIT 6.006 官方讲义与习题</a></td><td>插入 / 归并 / 快排：比较稳定性、空间、最好与最坏复杂度。期末前两周只复习错题，图可留到寒假。</td><td>不用题解写归并排序；挑 5 道旧题隔周重做，解释边界与复杂度。</td></tr><tr><td>寒假 · 2–4个学习周</td><td>图、BFS / DFS、最短路、最小生成树</td><td><a href="https://www.bilibili.com/video/BV1YuCGYqEDb/" target="_blank" rel="noopener noreferrer">Bilibili · MIT 6.006 2020（中英字幕版）</a><br/><a href="https://www.hello-algo.com/" target="_blank" rel="noopener noreferrer">Hello 算法（切换 C++ 代码）</a><br/><a href="https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/" target="_blank" rel="noopener noreferrer">MIT 6.006 官方讲义与习题</a></td><td>先邻接表，再 BFS/DFS；Dijkstra 与负权限制；用 Hello 算法补 Prim/Kruskal。已有实习时每周只排两个 45 分钟块。</td><td>实现遍历、Dijkstra、并查集 / Kruskal；<a href="https://leetcode.cn/problems/number-of-islands/" target="_blank" rel="noopener noreferrer">200 岛屿数量</a>。整理一份复杂度表。</td></tr><tr><td>2027春季 · 路线收缩后</td><td>目标校大纲与书面算法题</td><td><a href="https://yzb.bupt.edu.cn/" target="_blank" rel="noopener noreferrer">北邮研究生招生官网</a></td><td>核对报考年份、专业、初试科目和大纲后再做专项；本页知识顺序是准备建议，不把往年科目当未来承诺。</td><td>拿正式大纲做覆盖表，补缺口；编码题库不能替代专业课书面题。</td></tr></tbody></table></div><h3>教材与题库 · 一条主线</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">角色</th><th scope="col">资源</th><th scope="col">使用方法</th></tr></thead><tbody><tr><td>中文主线</td><td><a href="https://www.hello-algo.com/" target="_blank" rel="noopener noreferrer">Hello 算法（切换 C++ 代码）</a></td><td>免费互动教材，读对应章节，运行 C++ 示例后闭卷重写。</td></tr><tr><td>考试练习</td><td>王道《数据结构考研复习指导》（按报考年份选版）</td><td>每周选当前知识点的选择题 / 综合题。是否全书都考，以目标校当年大纲为准。</td></tr><tr><td>语言工具书</td><td>《C++ Primer》第5版；<a href="https://www.learncpp.com/" target="_blank" rel="noopener noreferrer">LearnCpp 免费教材</a></td><td>只查变量、容器、函数、类等当前问题，不从头读到尾。</td></tr><tr><td>代码题库</td><td><a href="https://leetcode.cn/studyplan/leetcode-75/" target="_blank" rel="noopener noreferrer">LeetCode 75</a> · <a href="https://leetcode.cn/problemset/" target="_blank" rel="noopener noreferrer">力扣题库</a></td><td>本学期从计划中按结构挑题，每周2–3题；先 Easy 再 Medium。无需本学期刷满75题，也不为本路线购买会员。</td></tr><tr><td>API 查阅</td><td><a href="https://en.cppreference.com/w/cpp/container" target="_blank" rel="noopener noreferrer">cppreference · Containers</a></td><td>只查 vector / stack / queue / priority_queue / map 的接口和复杂度。</td></tr></tbody></table></div><div class="checklist"><label><input type="checkbox" id="cpp-0" data-scope="milestone"/> 能独立编译调试 C++，解释指针与引用</label><label><input type="checkbox" id="cpp-1" data-scope="milestone"/> 能实现链表、栈队列、树遍历并分析复杂度</label><label><input type="checkbox" id="cpp-2" data-scope="milestone"/> 能完成图 / 查找 / 排序专题并复盘错误</label></div><p class="back"><a href="#phase1">← 回到学期安排</a></p></section><section class="phase" id="hciGuide" aria-labelledby="hciGuide-title"><h2 id="hciGuide-title" tabindex="-1">HCI / Human-AI Interaction Guide</h2><div class="notice">目标：做出一个可演示、可评估的 Human–AI Interaction 项目，兼顾北邮数字媒体技术、中传信息技术与设计、同济 AI 与数据设计的准备。<strong>每周 HCI 2小时 + 共享项目2小时</strong>：周三第5–6节学习与设计80分钟，周四第11节整理40分钟；周五第7–10节内完成120分钟项目并留出休息。项目工程计入这2小时，不另开一条大模型全课。</div><h3>主资源与教材</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">用途</th><th scope="col">资源</th><th scope="col">How to Use</th></tr></thead><tbody><tr><td>视频优先</td><td><a href="https://www.bilibili.com/video/BV1ry4y137QZ/" target="_blank" rel="noopener noreferrer">Bilibili · Stanford HCI（中英双语字幕）</a></td><td>页面列有中文 / 英文字幕。按下面的视频标题选看；这是 Stanford HCI 入门系列，不将其分P编号冒充 CS147 2025 课堂编号。</td></tr><tr><td>项目标准</td><td><a href="https://hci.stanford.edu/courses/cs147/2025/au/" target="_blank" rel="noopener noreferrer">Stanford CS147 2025 · 官方课程与项目任务</a></td><td>参照 Needfinding、Low-fi、Evaluation 等项目任务，缩小成个人可完成的版本。</td></tr><tr><td>教材</td><td>余强、周苏《人机交互技术》第2版；Don Norman《设计心理学1：日常的设计》</td><td>前者整理概念与简答，后者选读示能、反馈、映射、约束。教材推荐不等于当年招生指定书目。</td></tr><tr><td>Human–AI</td><td><a href="https://pair.withgoogle.com/guidebook/" target="_blank" rel="noopener noreferrer">Google People + AI Guidebook</a><br/><a href="https://www.microsoft.com/en-us/research/project/guidelines-for-human-ai-interaction/" target="_blank" rel="noopener noreferrer">Microsoft · Guidelines for Human-AI Interaction</a></td><td>用人的需求、能力边界、纠错、反馈与控制权检查自己的原型。阅读后每次只落实一项设计修改。</td></tr><tr><td>Figma</td><td><a href="https://www.bilibili.com/video/BV1pAeqz1ETE/" target="_blank" rel="noopener noreferrer">Bilibili · Figma 2025 中文字幕：原型连接（同合集含入门）</a><br/><a href="https://help.figma.com/hc/en-us/articles/30848209492887-Course-overview-Figma-Design-for-beginners-2025" target="_blank" rel="noopener noreferrer">Figma 官方初学者课程 2025</a></td><td>B站优先；工具界面变化时查官方课。仅学 Frame / Auto Layout / Components / Prototype，约4次练习后直接用于项目。</td></tr></tbody></table></div><h3>分阶段 Guide</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">阶段</th><th scope="col">课程主题</th><th scope="col">本周实践</th><th scope="col">How to Use / 验收</th></tr></thead><tbody><tr><td>S1 · 第1–2周</td><td>人机交互 / 原型的力量 / 评估设计</td><td>观察2个现有工具；记录3种任务受阻场景。选一个可接触用户的小问题。</td><td>研究问题可用：“AI 解释与可编辑反馈能否帮助用户发现查询错误？”可与 Text-to-Datalog 衔接，须先与导师确认可公开范围。</td></tr><tr><td>S2 · 第3–4周</td><td>参与者观察 / 访谈 / 挖掘潜在需求</td><td>访谈3–5名愿意参与者，每人20–30分钟；得到同意再记录，匿名整理原话、行为与困惑。</td><td>问最近一次真实经历，少问“你想不想要AI”。产出1页问题定义、关键任务、现有解决办法与成功标准。</td></tr><tr><td>S3 · 第5–6周</td><td>创建设计目标 / 备选方案 / 纸质原型</td><td>提出至少3个不同交互方案；比较现有工具的做法，画2个任务流程。</td><td>先纸面原型，不急着接模型。请2人走通任务，记卡点。交付方案选择依据与低保真原型。</td></tr><tr><td>S4 · 第7–8周</td><td>心智模型 / 设计启发法 / Figma</td><td>做可点击原型：输入、查看依据、修改、撤销、失败恢复。</td><td>应用 PAIR / Microsoft 指南；确保用户知道 AI 的能力范围、如何拒绝与纠正输出。交付一次完整任务演示。</td></tr><tr><td>S5 · 第9–10周</td><td>Human–AI 实现与观察</td><td><a href="https://huggingface.co/learn/llm-course/zh-CN/chapter1/1" target="_blank" rel="noopener noreferrer">Hugging Face LLM Course · 中文教材</a><br/>用 Python + 简单界面接一条可运行任务链。</td><td>先规则或检索基线，再加模型；保留响应时间、失败样例、版本信息。<a href="https://www.gradio.app/guides/quickstart" target="_blank" rel="noopener noreferrer">Gradio 官方 Quickstart</a>可快速做演示，无需完整前端课程。</td></tr><tr><td>S6 · 第11周至期末前</td><td>可用性测试 / 迭代</td><td>让3–5人做相同的2–3项任务，记录成功率、用时、纠错次数与访谈反馈。</td><td>作为小样本探索，不宣称普遍因果结论；两种界面对比时平衡先后顺序。修复最严重的3个问题，期末只维护。</td></tr><tr><td>寒假</td><td>完成一个可复现案例</td><td>补失败情境和第二轮测试；做2分钟演示 + README + 6–8页项目案例草稿。</td><td>页数是本计划建议，不是学校要求。案例必须包含需求、替代方案、证据、改版前后与个人贡献。</td></tr></tbody></table></div><h3>How to Use · 项目与科研共用成果</h3><p>每次 HCI 学习最多一半时间看课，另一半直接改访谈提纲、原型或测试方案。周五项目块按“30分钟明确下一步 → 60分钟实现 → 30分钟测试记录”推进，中途休息。只做一个小闭环：用户问题 → 方案比较 → 可用原型 → 观察证据 → 迭代。</p><div class="checklist"><label><input type="checkbox" id="hci-0" data-scope="milestone"/> 完成需求证据与3个备选方案</label><label><input type="checkbox" id="hci-1" data-scope="milestone"/> 完成可点击原型和AI纠错流程</label><label><input type="checkbox" id="hci-2" data-scope="milestone"/> 完成可运行demo、用户测试和迭代案例</label></div><p class="back"><a href="#phase1">← 回到学期安排</a></p></section><section class="phase" id="internshipGuide" aria-labelledby="internshipGuide-title"><h2 id="internshipGuide-title" tabindex="-1">Internship Preparation Guide</h2><div class="notice">目标岗位：AI / LLM应用、NLP / LLM评估、Data Analysis / Data Science。<strong>周二第9–10节专用80分钟 + 周五共享项目成果</strong>。10月下旬开始小批投递；如岗位要求跨学期在岗，先核实每周天数、到岗日期和最低时长，再判断是否匹配。</div><h3>阶段路线 · 可直接开始</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">阶段</th><th scope="col">重点与链接</th><th scope="col">具体练习</th><th scope="col">How to Use / 阶段目标</th></tr></thead><tbody><tr><td>9.28–10.18</td><td>SQL基础<br/><a href="https://www.bilibili.com/video/BV1mU4y177Lk/" target="_blank" rel="noopener noreferrer">Bilibili · Socratica SQL（中英字幕）</a><br/><a href="https://leetcode.cn/studyplan/sql-free-50/" target="_blank" rel="noopener noreferrer">力扣 · 高频 SQL 50 题（基础版）</a></td><td>SELECT、WHERE、JOIN、GROUP BY、HAVING、NULL；从基础版计划选每周3–4题。</td><td>数据库校内作业优先。80分钟：15分钟补概念 + 45分钟做题 + 20分钟复盘；说明重复行与空值如何影响结果。整理一版简历。</td></tr><tr><td>10.19–11.15</td><td>SQL进阶 + 项目证据<br/><a href="https://leetcode.cn/studyplan/sql-free-50/" target="_blank" rel="noopener noreferrer">力扣 · 高频 SQL 50 题（基础版）</a></td><td>子查询、CTE、窗口函数；同一道查询先预测输出，再执行。整理科研中的基线、指标、失败案例。</td><td>每周专用块改为40分钟SQL + 20分钟简历 + 20分钟筛选 / 投递；每周3–5个匹配岗位，累计约15–20题比盲目刷满更可行。</td></tr><tr><td>11.16–12.13</td><td>Python / Pandas / ML复习<br/><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html" target="_blank" rel="noopener noreferrer">Pandas 入门实践</a><br/><a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener noreferrer">scikit-learn User Guide</a></td><td>从已有数据做缺失值、合并、分组和可视化；复习切分、交叉验证、泄漏、precision / recall / F1。</td><td>一份可复现Notebook，展示基线与误差分析；简历每条经历写清问题、个人贡献、真实证据。已有面试就替换常规任务。</td></tr><tr><td>LLM专项 · 嵌入项目块</td><td><a href="https://www.bilibili.com/video/BV1Jm4y1X7UL/" target="_blank" rel="noopener noreferrer">Bilibili · Hugging Face 工程师课程（双语字幕）</a><br/><a href="https://huggingface.co/learn/llm-course/zh-CN/chapter1/1" target="_blank" rel="noopener noreferrer">Hugging Face LLM Course · 中文教材</a><br/><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener noreferrer">PyTorch · Learn the Basics（含可运行代码）</a></td><td>选 HF 第1–3章：pipeline、tokenizer、模型、batch、训练与评估；PyTorch 仅补 DataLoader / autograd / 优化。</td><td>B站为旧版课程，双语字幕有机器翻译误差；概念跟视频，代码以当前官方教材为准。小数据 / CPU 基线先跑通；不用预训练大模型。</td></tr><tr><td>12.14–期末</td><td>考试优先 / 面试维护</td><td>准备90秒自我介绍 + 5分钟科研故事；用10个常见追问模拟。</td><td>每周最多30分钟必要投递维护；遇真实面试替换其它自学块。SQL和新项目暂缓，不压缩校内复习。</td></tr><tr><td>寒假</td><td>有实习：交付优先；未拿到：迭代投递</td><td><a href="https://join.qq.com/" target="_blank" rel="noopener noreferrer">腾讯官方招聘</a> · <a href="https://jobs.bytedance.com/campus" target="_blank" rel="noopener noreferrer">字节跳动校园招聘</a><br/>以当时实际岗位说明为准，不预设有寒假短期名额。</td><td>记录投递日期 / 岗位 / 地点 / 在岗要求 / 状态 / 下一步。无实习时每周2次集中投递与1次模拟面试，同时完成项目案例。</td></tr></tbody></table></div><h3>练习库、教材与面试清单</h3><div class="table-scroll"><table class="resource-table"><thead><tr><th scope="col">能力</th><th scope="col">资源</th><th scope="col">使用方法 / 输出</th></tr></thead><tbody><tr><td>SQL</td><td><a href="https://leetcode.cn/studyplan/sql-free-50/" target="_blank" rel="noopener noreferrer">力扣 · 高频 SQL 50 题（基础版）</a><br/><a href="https://www.postgresql.org/docs/current/tutorial.html" target="_blank" rel="noopener noreferrer">PostgreSQL 官方教程</a></td><td>结合校内数据库教材。讲清 JOIN、分组、窗口区别；SQL方言与题库执行环境一致。</td></tr><tr><td>Python</td><td><a href="https://docs.python.org/zh-cn/3/tutorial/" target="_blank" rel="noopener noreferrer">Python 官方中文教程</a><br/><a href="https://leetcode.cn/studyplan/leetcode-75/" target="_blank" rel="noopener noreferrer">LeetCode 75</a></td><td>只查薄弱的列表 / 字典 / 迭代器；面试按岗位选数组、哈希、字符串题。数据结构主线用 C++，面试可用 Python，不重复刷整套。</td></tr><tr><td>NLP / LLM教材</td><td><a href="https://huggingface.co/learn/llm-course/zh-CN/chapter1/1" target="_blank" rel="noopener noreferrer">Hugging Face LLM Course · 中文教材</a><br/><a href="https://zh.d2l.ai/" target="_blank" rel="noopener noreferrer">《动手学深度学习》中文在线版</a></td><td>结合本学期NLP：注意力、tokenization、embedding、fine-tuning、评估；只补项目实际使用的章节。</td></tr><tr><td>AI应用评估</td><td><a href="https://www.sbert.net/examples/sentence_transformer/applications/semantic-search/README.html" target="_blank" rel="noopener noreferrer">Sentence Transformers · Semantic Search</a></td><td>先关键词检索，再语义检索；保存30–50条人工检查样例，划分开发 / 留出集，对比检索命中、引用正确、回答失败与延迟。不要只展示聊天截图。</td></tr><tr><td>项目讲述</td><td>自己的 Text-to-Datalog / AI×HCI 项目</td><td>回答：为何这样定义任务？基线是什么？如何避免数据泄漏？最差案例是什么？你改了什么？结果能复现吗？没有测量的数据不写简历。</td></tr></tbody></table></div><h3>How to Use · 每周复盘</h3><p>对照3个真实岗位描述圈出共同要求，只补共同缺口。主投 AI / NLP 或 Data 中与现有证据最吻合的一类，另一类保留少量机会；一份母版简历按岗位调顺序。共享项目里每项工程改进都留一条可解释证据，面试准备就不会变成另起炉灶。</p><div class="checklist"><label><input type="checkbox" id="intern-0" data-scope="milestone"/> 完成简历与可运行项目链接，确认可到岗条件</label><label><input type="checkbox" id="intern-1" data-scope="milestone"/> 完成首轮定向投递并维护追踪表</label><label><input type="checkbox" id="intern-2" data-scope="milestone"/> 完成1次模拟面试与1份误差分析报告</label></div><p class="back"><a href="#phase1">← 回到学期安排</a></p></section></main><footer><strong>资源说明 · 2026-09-25：</strong>新指南的字幕标注来自视频页面标题 / 简介，未逐集播放核验；B站部分资源可能需要登录。已有 Random Process / Bayesian Guide 保留原内容与路径。外链可用性受地区、登录与网站限制影响，逐条检查结果见随附检查说明。学习周从9月28日起计，不等同于校历周；固定课周次按图片原样保留。</footer><noscript><style>.phase{display:block}</style><p>JavaScript未启用：全部页面已展开，进度保存不可用。</p></noscript><script>
+"use strict";
+const phases=[...document.querySelectorAll('.phase')];
+function showPhase(id){
+ const page=document.getElementById(id);
+ if(!page || !page.classList.contains('phase'))return false;
+ phases.forEach(p=>{p.classList.toggle('active',p===page);p.setAttribute('aria-hidden',String(p!==page));});
+ document.querySelectorAll('[data-phase]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.phase===id)));
+ return true;
+}
+function route(){const id=location.hash.slice(1);if(!showPhase(id))showPhase('phase1');window.scrollTo(0,0);}
+document.querySelectorAll('[data-phase]').forEach(b=>b.addEventListener('click',()=>{location.hash=b.dataset.phase;}));
+window.addEventListener('hashchange',route);
+const key=x=>'semester-v10:'+(x.dataset.task!==undefined?'weekly-task-'+x.dataset.task:x.id);
+const inputs=[...document.querySelectorAll('input[type="checkbox"]')];
+let storageReady=true;
+function storageError(){storageReady=false;document.getElementById('storage-status').textContent='当前浏览器不允许本地保存；勾选仅在本次打开期间有效。';}
+inputs.forEach(x=>{
+ try{x.checked=localStorage.getItem(key(x))==='true';}catch{storageError();}
+ x.addEventListener('change',()=>{
+  inputs.filter(y=>key(y)===key(x)).forEach(y=>y.checked=x.checked);
+  if(storageReady){try{localStorage.setItem(key(x),String(x.checked));}catch{storageError();}}
+ });
+});
+document.getElementById('weekly-reset').addEventListener('click',()=>{
+ if(!confirm('重置本周安排的勾选？三个 Guide 的阶段目标会保留。'))return;
+ inputs.filter(x=>x.dataset.scope==='weekly').forEach(x=>{x.checked=false;if(storageReady){try{localStorage.removeItem(key(x));}catch{storageError();}}});
+});
+route();
+</script></body></html>
